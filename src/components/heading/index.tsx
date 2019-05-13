@@ -17,7 +17,7 @@ class Heading extends React.Component<IHeading> {
     const type = typography[`h${level}`]
 
     return (
-      <HeadingContainer font={type.font} lineHeight={type.lineHeight} letterSpacing={type.letterSpacing} as={`h${level}`}>{children}</HeadingContainer>
+      <HeadingContainer size={type.size} font={type.font} lineHeight={type.lineHeight} letterSpacing={type.letterSpacing} as={`h${level}`}>{children}</HeadingContainer>
     )
   }
 }

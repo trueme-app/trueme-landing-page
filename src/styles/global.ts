@@ -28,15 +28,18 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  body {
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    background-color: ${colours.grey.base};
-    font-family: ${fonts.body};
+  html {
     font-size: 14px;
 
     ${above.sm`
       font-size: 16px;
     `}
+  }
+
+  body {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    background-color: ${colours.grey.base};
+    font-family: ${fonts.body};
   }
 
   a,

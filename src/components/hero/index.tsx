@@ -33,7 +33,7 @@ class Hero extends React.Component {
             </Grid.Column>
           </Grid>
           <Grid>
-            <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 4, end: 10 }}>
+            <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
               <Heading level={1}>Are you frustrated with the current ways to meet new people?</Heading>
             </Grid.Column>
           </Grid>

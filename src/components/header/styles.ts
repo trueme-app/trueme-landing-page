@@ -3,6 +3,7 @@ import { above, spacing } from '../../styles'
 import { Container } from '../../styles/shared'
 
 const HeaderContainer = styled(Container)`
+  flex-direction: row;
   justify-content: center;
   padding: ${spacing.lg};
 

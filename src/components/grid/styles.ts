@@ -37,6 +37,7 @@ const GridContainer = styled.div`
 const GridColumnContainer = styled.div`
   display: grid;
   grid-column: ${(props) => props.xs.start} / ${(props) => props.xs.end};
+  align-content: ${(props) => props.align};
 
   ${above.sm`
     grid-column: ${(props) => props.sm.start || props.xs.start} / ${(props) => props.sm.end || props.xs.end};

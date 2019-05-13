@@ -32,8 +32,8 @@ class Grid extends React.Component<IGrid> {
     xxl: grid.xxl,
   }
 
-  static Column = ({ children, xs, sm, md, lg, xl, xxl }: IGridColumnProps) => {
-    return (<GridColumnContainer xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>{children}</GridColumnContainer>)
+  static Column = ({ children, align, xs, sm, md, lg, xl, xxl }: IGridColumnProps) => {
+    return (<GridColumnContainer align={align} xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>{children}</GridColumnContainer>)
   }
 
   render() {
@@ -43,6 +43,7 @@ class Grid extends React.Component<IGrid> {
 }
 
 Grid.Column.defaultProps = {
+  align: 'start',
   xs: grid.xs,
   sm: grid.sm,
   md: grid.md,

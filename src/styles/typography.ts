@@ -1,8 +1,20 @@
 const typeSizes = {
-  h1: '2.85rem',
-  h2: '1.875rem',
-  h3: '1rem',
-  body: '.8rem',
+  h1: {
+    xs: '1.78rem',
+    sm: '2.5rem',
+  },
+  h2: {
+    xs: '1.42rem',
+    sm: '1.875rem',
+  },
+  h3: {
+    xs: '1rem',
+    sm: '1rem',
+  },
+  body: {
+    xs: '.8rem',
+    sm: '1.14rem',
+  },
 }
 
 const fonts = {
