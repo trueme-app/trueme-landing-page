@@ -5,7 +5,7 @@ import Button from '../button'
 import Grid from '../grid'
 import Heading from '../heading'
 import ValueProp from '../value-prop'
-import { ButtonContainer, FamilyContainer, HeroContainer } from './styles'
+import { FamilyContainer, HeroContainer } from './styles'
 
 class Hero extends React.Component {
   render() {
@@ -22,9 +22,9 @@ class Hero extends React.Component {
               <Heading level={3}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
             </Grid.Column>
           </Grid>
-          <ButtonContainer>
+          <Container padding-top>
             <Button hideMd={true}>Sign up today</Button>
-          </ButtonContainer>
+          </Container>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
               <FamilyContainer>

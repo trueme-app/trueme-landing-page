@@ -57,16 +57,11 @@ const HeroContainer = styled.article`
   }
 `
 
-const ButtonContainer = styled.div`
-  margin: ${spacing.lg} 0;
-`
-
 const FamilyContainer = styled(SVGContainer)`
   padding: ${spacing.xl} 0;
 `
 
 export {
-  ButtonContainer,
   FamilyContainer,
   HeroContainer,
 }

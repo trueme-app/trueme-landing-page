@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ButtonContainer } from './styles'
+import { StyledButton } from './styles'
 
 interface IButton {
   label?: string
@@ -26,7 +26,7 @@ class Button extends React.Component<IButton> {
     const { label, children, type, hideXs, hideSm, hideMd, hideLg, hideXl }: IButton = this.props
 
     return (
-      <ButtonContainer as={type} hideXs={hideXs} hideSm={hideSm} hideMd={hideMd} hideLg={hideLg} hideXl={hideXl}>{label || children}</ButtonContainer>
+      <StyledButton as={type} hideXs={hideXs} hideSm={hideSm} hideMd={hideMd} hideLg={hideLg} hideXl={hideXl}>{label || children}</StyledButton>
     )
   }
 }

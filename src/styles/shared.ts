@@ -5,8 +5,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: ${(props) => props.paddingBottom !== null ? spacing.xl : '0'};
-  padding-top: ${(props) => props.paddingBottom !== null ? spacing.xl : '0'};
+  align-items: center;
+  padding-bottom: ${(props) => typeof props['padding-bottom'] !== 'undefined' ? spacing.xl : '0'};
+  padding-top: ${(props) => typeof props['padding-top'] !== 'undefined' ? spacing.xl : '0'};
   margin: 0 auto;
   max-width: 1300px;
 `

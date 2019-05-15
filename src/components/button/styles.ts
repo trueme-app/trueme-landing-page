@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { above, borderRadius, colours, spacing } from '../../styles'
 
-const ButtonContainer = styled.button`
+const StyledButton = styled.button`
   background-color: ${colours.rose.base};
   border: 0;
   border-radius: ${borderRadius.default};
@@ -36,6 +36,11 @@ const ButtonContainer = styled.button`
   `}
 `
 
+const ButtonContainer = styled.div`
+  margin: ${spacing.lg} 0;
+`
+
 export {
+  StyledButton,
   ButtonContainer,
 }
