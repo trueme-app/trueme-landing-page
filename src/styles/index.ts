@@ -2,7 +2,7 @@ import { easing, timing } from './animation'
 import borderRadius from './borders'
 import colours from './colours'
 import * as fontFiles from './fonts'
-import { grid, IGrid } from './grid'
+import { grid, IGridConfig } from './grid'
 import { above, below, gpuStyles } from './mixins'
 import spacing from './spacing'
 import { fonts, typeSizes, typography } from './typography'
@@ -17,7 +17,7 @@ export {
   fonts,
   gpuStyles,
   grid,
-  IGrid,
+  IGridConfig,
   spacing,
   timing,
   typeSizes,

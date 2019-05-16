@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import Wave1 from '../../assets/images/illu-wave-1.svg'
+import Wave from '../../assets/images/illu-wave.svg'
+import Sweep from '../../assets/images/illu-sweep.svg'
 import { above, spacing } from '../../styles'
-import { SVGContainer } from '../../styles/shared'
 
-const HeroContainer = styled.article`
+const WaveContainer = styled.section`
   align-items: center;
   display: flex;
   flex: 1;
@@ -29,7 +29,7 @@ const HeroContainer = styled.article`
   `}
 
   &::after {
-    background-image: url(${Wave1});
+    background-image: url(${Wave});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,11 +57,38 @@ const HeroContainer = styled.article`
   }
 `
 
-const FamilyContainer = styled(SVGContainer)`
-  padding: ${spacing.xl} 0;
+const SweepContainer = styled.section`
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 400vw;
+  margin-bottom: ${spacing.lg};
+  padding-top: ${spacing.xl};
+
+  ${above.md`
+    min-height: 70vw;
+  `}
+
+  &::after {
+    background-image: url(${Sweep});
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    height: 500vw;
+    width: 100%;
+    z-index: -1;
+
+    ${above.md`
+      height: 70vw;
+    `}
+  }
 `
 
 export {
-  FamilyContainer,
-  HeroContainer,
+  WaveContainer,
+  SweepContainer,
 }

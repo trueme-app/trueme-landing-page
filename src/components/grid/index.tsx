@@ -4,13 +4,19 @@ import { GridColumnContainer, GridContainer } from './styles'
 
 interface IGrid {
   children: React.ReactNode[],
-  justify: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly'
-  align: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly'
-  textAlign: 'left' | 'right' | 'center'
+  justify: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly',
+  align: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly',
+  textAlign: 'left' | 'right' | 'center',
+  xs?: IGrid,
+  sm?: IGrid,
+  md?: IGrid,
+  lg?: IGrid,
+  xl?: IGrid,
+  xxl?: IGrid,
 }
 
 interface IGridColumn {
-  children: React.ReactNode[],
+  children?: React.ReactNode[],
   xs?: IGrid,
   sm?: IGrid,
   md?: IGrid,
@@ -37,7 +43,7 @@ class Grid extends React.Component<IGrid> {
   }
 
   render() {
-    const { children, textAlign, align, justify, xs, sm, md, lg, xl, xxl }: IGridProps = this.props
+    const { children, textAlign, align, justify, xs, sm, md, lg, xl, xxl }: IGrid = this.props
     return (<GridContainer textAlign={textAlign} align={align} justify={justify} xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>{children}</GridContainer>)
   }
 }

@@ -11,7 +11,7 @@ const grid = {
   xxl: {},
 }
 
-interface IGrid {
+interface IGridConfig {
   start: number,
   end: number,
   columns?: number,
@@ -19,5 +19,5 @@ interface IGrid {
 
 export {
   grid,
-  IGrid,
+  IGridConfig,
 }

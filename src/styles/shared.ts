@@ -35,6 +35,12 @@ const UnstyledList = styled.ul`
 const SVGContainer = styled.div`
   display: flex;
 
+  ${(props) => {
+    if (props['padding-xl']) {
+      return `padding: ${spacing.xl} 0`
+    }
+  }};
+
   svg {
     width: 100%;
     height: 100%;
