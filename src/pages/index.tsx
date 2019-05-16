@@ -40,7 +40,7 @@ class IndexPage extends React.Component {
             </Container>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
-                <SVGContainer padding-top-xl>
+                <SVGContainer padding-top-xl padding-bottom-xl>
                   <Family/>
                 </SVGContainer>
               </Grid.Column>
@@ -65,7 +65,7 @@ class IndexPage extends React.Component {
             <Button>Sign up today</Button>
           </Block>
         </Container>
-        <Container padding-bottom>
+        <Container padding-bottom-xl>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>
               <Heading level={1}>Who is Trueme for?</Heading>

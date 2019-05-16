@@ -1,15 +1,14 @@
 import styled from 'styled-components'
-import { above, spacing, typography } from './index'
+import { above, spacing, marginsPadding, typography } from './index'
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: ${(props) => typeof props['padding-bottom'] !== 'undefined' ? spacing.xl : '0'};
-  padding-top: ${(props) => typeof props['padding-top'] !== 'undefined' ? spacing.xl : '0'};
   margin: 0 auto;
   max-width: 1300px;
+  ${(props) => marginsPadding(props)};
 `
 
 const Copy = styled.p`
@@ -34,6 +33,7 @@ const UnstyledList = styled.ul`
 
 const SVGContainer = styled.div`
   display: flex;
+  ${(props) => marginsPadding(props)};
 
   ${(props) => {
     if (props['padding-xl']) {

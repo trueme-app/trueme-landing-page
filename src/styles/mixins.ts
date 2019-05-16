@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import spacing from './spacing'
 
 export const media = {
   xxl: 1600,
@@ -33,4 +34,20 @@ export const gpuStyles = () => {
     backface-visibility: hidden;
     perspective: 1000;
   `
+}
+
+export const marginsPadding = (props) => {
+  let classes = ``;
+  const properties = ['padding', 'margin'];
+
+  Object.keys(props).forEach((prop) => {
+    properties.forEach((property) => {
+      if (prop.startsWith(property)) {
+        const [, axis, key] = prop.split('-');
+        classes += `${property}-${axis}: ${spacing[key]};`;
+      }
+    })
+  });
+
+  return css`${classes}`
 }
