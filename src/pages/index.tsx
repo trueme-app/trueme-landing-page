@@ -1,10 +1,14 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
+import AdviceIcon from '../assets/images/icon-advice.inline.svg'
 import Dancing from '../assets/images/illu-dancing.inline.svg'
 import Family from '../assets/images/illu-family.inline.svg'
-import AdviceIcon from '../assets/images/icon-advice.inline.svg'
 import FriendshipIcon from '../assets/images/icon-friendship.inline.svg'
 import LoveIcon from '../assets/images/icon-love.inline.svg'
+import FiltersIcon from '../assets/images/icon-filters.inline.svg'
+import ReviewIcon from '../assets/images/icon-review.inline.svg'
+import MatchIcon from '../assets/images/icon-match.inline.svg'
+import DateIcon from '../assets/images/icon-dates.inline.svg'
 import { Container, Copy, SVGContainer } from '../styles/shared'
 import Block from '../components/block'
 import Button from '../components/button'
@@ -108,36 +112,75 @@ class IndexPage extends React.Component {
             </SocialProof.Item>
           </SocialProof>
         </Container>
-        <Container padding-top>
+        <Container padding-top-lg>
           <ButtonContainer>
             <Button>Sign Up Today</Button>
           </ButtonContainer>
         </Container>
         <Block type='sweep'>
+          <Container padding-top-xxxl>
+            <Grid>
+              <Grid.Column xs={{ start: 2, end: 12 }}>
+                <Heading level={1}>Why do so many choose Trueme?</Heading>
+                <ProductBenefit>
+                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
+                    <AdviceIcon/>
+                    <Heading level={2}>Advice</Heading>
+                    <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
+                  </ProductBenefit.Item>
+                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
+                    <FriendshipIcon/>
+                    <Heading level={2}>Friendship</Heading>
+                    <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
+                  </ProductBenefit.Item>
+                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
+                    <LoveIcon/>
+                    <Heading level={2}>Love</Heading>
+                    <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
+                  </ProductBenefit.Item>
+                </ProductBenefit>
+              </Grid.Column>
+            </Grid>
+            <Button>Sign Up Today</Button>
+          </Container>
+        </Block>
+        <Container padding-bottom-xl>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>
-              <Heading level={1}>Why do so many choose Trueme?</Heading>
-              <ProductBenefit>
-                <ProductBenefit.Item align='flex-end' xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
-                  <AdviceIcon/>
-                  <Heading level={2}>Advice</Heading>
-                  <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
-                </ProductBenefit.Item>
-                <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
-                  <FriendshipIcon/>
-                  <Heading level={2}>Friendship</Heading>
-                  <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
-                </ProductBenefit.Item>
-                <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
-                  <LoveIcon/>
-                  <Heading level={2}>Love</Heading>
-                  <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
-                </ProductBenefit.Item>
-              </ProductBenefit>
+              <Heading level={1}>Why is Trueme so different?</Heading>
+              <Copy>
+                The Trueme relationship platform allows people to show who they really are,
+                without fear of rejection or judgement. We embrace single-parents or people willing
+                to accept a little baggage, because we want to share your unique story. Feel safe to
+                be yourself & take your time to make meaningful connections. We’re with you every
+                step of the way.
+              </Copy>
             </Grid.Column>
           </Grid>
+          <ProductBenefit>
+            <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 3, end: 7 }}>
+              <FiltersIcon/>
+              <Heading level={2}>No Filters</Heading>
+              <Copy>Only allow profile pictures without filters</Copy>
+            </ProductBenefit.Item>
+            <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 7, end: 11 }}>
+              <ReviewIcon/>
+              <Heading level={2}>Q&A</Heading>
+              <Copy>Thoroughly review all new members</Copy>
+            </ProductBenefit.Item>
+            <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 3, end: 7 }}>
+              <MatchIcon/>
+              <Heading level={2}>We do the matching</Heading>
+              <Copy>Help you determine if someone is a good match for you</Copy>
+            </ProductBenefit.Item>
+            <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 7, end: 11 }}>
+              <DateIcon/>
+              <Heading level={2}>Schedule Dates</Heading>
+              <Copy>Help schedule dates based on your availability</Copy>
+            </ProductBenefit.Item>
+          </ProductBenefit>
           <Button>Sign Up Today</Button>
-        </Block>
+        </Container>
       </Layout>
     )
   }

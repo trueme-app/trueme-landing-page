@@ -63,12 +63,19 @@ const SweepContainer = styled.section`
   flex: 1;
   justify-content: center;
   flex-direction: column;
-  min-height: 400vw;
-  margin-bottom: ${spacing.lg};
-  padding-top: ${spacing.xl};
+  min-height: 120rem;
+  margin-bottom: ${spacing.xl};
+
+  ${above.sm`
+    min-height: 70rem;
+  `}
 
   ${above.md`
-    min-height: 70vw;
+    min-height: 75rem;
+  `}
+
+  ${above.lg`
+    min-height: 85rem;
   `}
 
   &::after {
@@ -78,12 +85,20 @@ const SweepContainer = styled.section`
     background-size: cover;
     content: '';
     position: absolute;
-    height: 500vw;
+    height: 120rem;
     width: 100%;
     z-index: -1;
 
+    ${above.sm`
+      height: 70rem;
+    `}
+
     ${above.md`
-      height: 70vw;
+      height: 75rem;
+    `}
+
+    ${above.lg`
+      height: 85rem;
     `}
   }
 `
