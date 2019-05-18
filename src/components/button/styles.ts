@@ -5,16 +5,16 @@ const StyledButton = styled.button`
   background-color: ${colours.rose.base};
   border: 0;
   border-radius: ${borderRadius.default};
-  display: ${(props) => props.hideXs ? 'none': 'flex'};
   color: ${colours.grey.base};
+  display: ${(props) => props.hideXs ? 'none': 'flex'};
   padding: ${spacing.md} ${spacing.xl};
   text-transform: uppercase;
-  fill: ${(props) => props.hideMd ? 'true': 'false'};
 
   &:hover {
     background-color: ${colours.rose.dark};
   }
 
+  /* stylelint-disable */
   ${above.xs`
     display: ${(props) => props.hideXs ? 'none': 'flex'};
   `}
@@ -34,6 +34,7 @@ const StyledButton = styled.button`
   ${above.xl`
     display: ${(props) => props.hideXl || props.hideLg || props.hideMd || props.hideSm || props.hideXs ? 'none': 'flex'};
   `}
+  /* stylelint-enable */
 `
 
 const ButtonContainer = styled.div`

@@ -12,6 +12,7 @@ import Family from '../assets/images/illu-family.inline.svg'
 import Block from '../components/block'
 import Button from '../components/button'
 import { ButtonContainer } from '../components/button/styles'
+import Footer from '../components/footer'
 import Grid from '../components/grid'
 import Heading from '../components/heading'
 import Hero from '../components/hero'
@@ -194,6 +195,7 @@ class IndexPage extends React.Component {
             </Grid>
           </Container>
         </Block>
+        <Footer/>
       </Layout>
     )
   }

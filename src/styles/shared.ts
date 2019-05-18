@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import { above, colours, marginsPadding, spacing, typography } from './index'
 
 const Container = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   margin: 0 auto;
   max-width: 1300px;
   ${(props) => marginsPadding(props)};
@@ -28,8 +28,8 @@ const Copy = styled.p`
 
 const UnstyledList = styled.ul`
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 `
 
 const SVGContainer = styled.div`
@@ -43,8 +43,8 @@ const SVGContainer = styled.div`
   }};
 
   svg {
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 `
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000116666667 0 28 0 28 27.9998833 0.000116666667 27.9998833"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-XS" transform="translate(-85.000000, -6753.000000)">
+            <g id="Group-Copy-3" transform="translate(33.000000, 6755.000000)">
+                <g id="Group-8" transform="translate(54.169492, 0.000000)">
+                    <g id="Group-3-Copy-8" transform="translate(5.830508, 6.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M18.1437278,8.23616111 L16.1872278,8.23616111 C15.4961722,8.23616111 15.3522833,8.51927222 15.3522833,9.23366111 L15.3522833,10.9603278 L18.1437278,10.9603278 L17.8750056,13.9913278 L15.3522833,13.9913278 L15.3522833,23.0454389 L11.7367833,23.0454389 L11.7367833,14.0294389 L9.85650556,14.0294389 L9.85650556,10.9603278 L11.7367833,10.9603278 L11.7367833,8.54338333 C11.7367833,6.27499444 12.9501167,5.09043889 15.64045,5.09043889 L18.1437278,5.09043889 L18.1437278,8.23616111 Z" id="Fill-1" fill="#09333E" mask="url(#mask-2)"></path>
+                    </g>
+                    <ellipse id="Oval-Copy-5" stroke="#09333E" stroke-width="2.4" cx="19.9152542" cy="20" rx="19.9152542" ry="20"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

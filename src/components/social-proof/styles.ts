@@ -14,12 +14,6 @@ const SocialProofQuoteContainer = styled.p`
   margin: 1rem 0;
   text-align: center;
 
-  ${Object.keys(typography.h2.size).map((size) =>
-    above[size]`
-      font-size: ${typography.h2.size[size]};
-    `)
-  }
-
   &::before {
     content: '“';
   }
@@ -27,6 +21,14 @@ const SocialProofQuoteContainer = styled.p`
   &::after {
     content: '”';
   }
+
+  /* stylelint-disable */
+  ${Object.keys(typography.h2.size).map((size) =>
+    above[size]`
+      font-size: ${typography.h2.size[size]};
+    `)
+  }
+  /* stylelint-enable */
 `
 
 const SocialProofSourceContainer = styled.footer`

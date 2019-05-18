@@ -30,9 +30,9 @@ export const below = Object.keys(media).reduce((accumulator, label) => {
 
 export const gpuStyles = () => {
   return css`
-    transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000;
+    transform: translateZ(0);
   `
 }
 

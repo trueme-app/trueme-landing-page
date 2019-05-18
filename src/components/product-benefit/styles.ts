@@ -12,6 +12,7 @@ const ProductBenefitItemContainer = styled(GridColumnContainer)`
   align-items: flex-start;
   padding: ${spacing.lg} 0;
 
+  /* stylelint-disable */
   ${above.sm`
     margin: ${spacing.sm};
   `}
@@ -19,6 +20,7 @@ const ProductBenefitItemContainer = styled(GridColumnContainer)`
   ${above.md`
     margin: ${spacing.md};
   `}
+  /* stylelint-enable */
 `
 
 export {

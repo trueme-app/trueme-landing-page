@@ -7,10 +7,12 @@ const HeaderContainer = styled(Container)`
   justify-content: center;
   padding: ${spacing.lg};
 
+  /* stylelint-disable */
   ${above.sm`
     justify-content: space-between;
     padding: ${spacing.lg};
   `}
+  /* stylelint-enable */
 `
 
 const LogoContainer = styled.div`

@@ -22,6 +22,7 @@ const baseAfterCss = css`
   z-index: -1;`
 
 const WaveContainer = styled.section`
+  /* stylelint-disable */
   ${baseCss}
   justify-content: flex-start;
   min-height: 112rem;
@@ -41,8 +42,10 @@ const WaveContainer = styled.section`
   ${above.xl`
     min-height: 125rem;
   `}
+  /* stylelint-enable */
 
   &::after {
+    /* stylelint-disable */
     ${baseAfterCss}
     background-image: url(${Wave});
     height: 112rem;
@@ -62,10 +65,12 @@ const WaveContainer = styled.section`
     ${above.xl`
       min-height: 125rem;
     `}
+    /* stylelint-enable */
   }
 `
 
 const SweepContainer = styled.section`
+  /* stylelint-disable */
   ${baseCss}
   min-height: 120rem;
 
@@ -98,10 +103,12 @@ const SweepContainer = styled.section`
       height: 85rem;
     `}
   }
+    /* stylelint-enable */
 `
 
 
 const FooterContainer = styled.section`
+  /* stylelint-disable */
   ${baseCss}
   min-height: 40rem;
 
@@ -126,6 +133,7 @@ const FooterContainer = styled.section`
       height: 70rem;
     `}
   }
+  /* stylelint-enable */
 `
 
 export {

@@ -17,6 +17,12 @@ interface IGrid {
 
 interface IGridColumn {
   children?: React.ReactNode[],
+  orderXs?: number,
+  orderSm?: number,
+  orderMd?: number,
+  orderLg?: number,
+  orderXl?: number,
+  orderXxl?: number,
   xs?: IGrid,
   sm?: IGrid,
   md?: IGrid,
@@ -38,8 +44,36 @@ class Grid extends React.Component<IGrid> {
     xxl: grid.xxl,
   }
 
-  static Column = ({ children, align, xs, sm, md, lg, xl, xxl }: IGridColumnProps) => {
-    return (<GridColumnContainer align={align} xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl}>{children}</GridColumnContainer>)
+  static Column = ({
+      children,
+      'order-xs': orderXs,
+      'order-sm': orderSm,
+      'order-md': orderMd,
+      'order-lg': orderLg,
+      'order-xl': orderXl,
+      'order-xxl': orderXxl,
+      align,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
+      xxl
+    }: IGridColumnProps) => {
+    return (<GridColumnContainer
+      orderXs={orderXs}
+      orderSm={orderSm}
+      orderMd={orderMd}
+      orderLg={orderLg}
+      orderXl={orderXl}
+      orderXxl={orderXxl}
+      align={align}
+      xs={xs}
+      sm={sm}
+      md={md}
+      lg={lg}
+      xl={xl}
+      xxl={xxl}>{children}</GridColumnContainer>)
   }
 
   render() {

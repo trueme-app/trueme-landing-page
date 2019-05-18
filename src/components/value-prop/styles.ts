@@ -15,6 +15,7 @@ const ValuePropItemContainer = styled(GridColumnContainer)`
   min-height: 4.1rem;
   padding: 0 ${spacing.lg};
 
+  /* stylelint-disable */
   ${above.sm`
     margin: ${spacing.sm};
   `}
@@ -22,6 +23,7 @@ const ValuePropItemContainer = styled(GridColumnContainer)`
   ${above.md`
     margin: ${spacing.md};
   `}
+  /* stylelint-enable */
 `
 
 export {
