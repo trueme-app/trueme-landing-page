@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { above, colours, spacing } from '../../styles'
 import { UnstyledList } from '../../styles/shared'
-import { GridContainer, GridColumnContainer } from '../grid/styles'
+import { GridColumnContainer, GridContainer } from '../grid/styles'
 
 const ProductBenefitContainer = styled(GridContainer)`
   list-style: none;

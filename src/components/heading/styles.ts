@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { above, fonts, typography } from '../../styles'
+import { above, colours, fonts, typography } from '../../styles'
 
 const HeadingContainer = styled.h1`
+  color: ${(props) => colours[props.colour] ? colours[props.colour][props.variant] : 'currentColor'};
   font-family: ${(props) => props.font};
   font-size: ${(props) => props.size.xs};
   font-weight: normal;
@@ -13,6 +14,10 @@ const HeadingContainer = styled.h1`
     above[size]`
       font-size: ${props.size[size]};
     `)
+  }
+
+  strong.green {
+    color: ${colours.green.base};
   }
 `
 

@@ -4,11 +4,11 @@ import { IGrid, IGridItem } from '../grid'
 import { ProductBenefitContainer, ProductBenefitItemContainer } from './styles'
 
 class ProductBenefit extends React.Component<IGrid> {
-  static defaultProps = Object.assign(grid, {
+  static defaultProps = {...grid, ...{
     justify: 'center',
     align: 'start',
     textAlign: 'center',
-  })
+  }}
 
   static Item = ({ children, xs, sm, md, lg, xl, xxl }: IGridItem) => (<ProductBenefitItemContainer xs={xs} sm={sm} md={md} lg={lg} xl={xl} xxl={xxl} as='li'><div>{children}</div></ProductBenefitItemContainer>)
 

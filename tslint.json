@@ -10,7 +10,8 @@
     "ordered-imports": [true],
     "no-console": [false],
     "no-var-requires": true,
-    "quotemark": [true, "single", "jsx-single"]
+    "quotemark": [true, "single", "jsx-single"],
+    "jsx-boolean-value": false
   },
   "rulesDirectory": []
 }

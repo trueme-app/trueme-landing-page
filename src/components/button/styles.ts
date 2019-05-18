@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { above, borderRadius, colours, spacing } from '../../styles'
+import { above, borderRadius, colours, marginsPadding, spacing } from '../../styles'
 
 const StyledButton = styled.button`
   background-color: ${colours.rose.base};
@@ -37,7 +37,10 @@ const StyledButton = styled.button`
 `
 
 const ButtonContainer = styled.div`
-  margin: ${spacing.lg} 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  ${(props) => marginsPadding(props)};
 `
 
 export {

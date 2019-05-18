@@ -1,26 +1,26 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
 import AdviceIcon from '../assets/images/icon-advice.inline.svg'
-import Dancing from '../assets/images/illu-dancing.inline.svg'
-import Family from '../assets/images/illu-family.inline.svg'
+import DateIcon from '../assets/images/icon-dates.inline.svg'
+import FiltersIcon from '../assets/images/icon-filters.inline.svg'
 import FriendshipIcon from '../assets/images/icon-friendship.inline.svg'
 import LoveIcon from '../assets/images/icon-love.inline.svg'
-import FiltersIcon from '../assets/images/icon-filters.inline.svg'
-import ReviewIcon from '../assets/images/icon-review.inline.svg'
 import MatchIcon from '../assets/images/icon-match.inline.svg'
-import DateIcon from '../assets/images/icon-dates.inline.svg'
-import { Container, Copy, SVGContainer } from '../styles/shared'
+import ReviewIcon from '../assets/images/icon-review.inline.svg'
+import Dancing from '../assets/images/illu-dancing.inline.svg'
+import Family from '../assets/images/illu-family.inline.svg'
 import Block from '../components/block'
 import Button from '../components/button'
 import { ButtonContainer } from '../components/button/styles'
+import Grid from '../components/grid'
 import Heading from '../components/heading'
 import Hero from '../components/hero'
-import Grid from '../components/grid'
 import ProductBenefit from '../components/product-benefit'
 import SEO from '../components/seo'
 import SocialProof from '../components/social-proof'
 import ValueProp from '../components/value-prop'
 import Layout from '../layouts'
+import { Container, Copy, SVGContainer } from '../styles/shared'
 
 class IndexPage extends React.Component {
   render() {
@@ -113,7 +113,7 @@ class IndexPage extends React.Component {
           </SocialProof>
         </Container>
         <Container padding-top-lg>
-          <ButtonContainer>
+          <ButtonContainer padding-top-lg>
             <Button>Sign Up Today</Button>
           </ButtonContainer>
         </Container>
@@ -181,6 +181,19 @@ class IndexPage extends React.Component {
           </ProductBenefit>
           <Button>Sign Up Today</Button>
         </Container>
+        <Block type='footer'>
+          <Container padding-top-xxxl>
+            <Grid>
+              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
+                <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
+                <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
+                <ButtonContainer margin-top-xl>
+                  <Button>Sign Up Today</Button>
+                </ButtonContainer>
+              </Grid.Column>
+            </Grid>
+          </Container>
+        </Block>
       </Layout>
     )
   }

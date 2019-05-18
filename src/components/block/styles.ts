@@ -1,16 +1,30 @@
-import styled from 'styled-components'
-import Wave from '../../assets/images/illu-wave.svg'
+import styled, { css } from 'styled-components'
+import Footer from '../../assets/images/illu-footer.svg'
 import Sweep from '../../assets/images/illu-sweep.svg'
+import Wave from '../../assets/images/illu-wave.svg'
 import { above, spacing } from '../../styles'
 
-const WaveContainer = styled.section`
+const baseCss = css`
   align-items: center;
   display: flex;
   flex: 1;
-  justify-content: flex-start;
   flex-direction: column;
+  justify-content: center;
+  margin-bottom: ${spacing.lg};`
+
+const baseAfterCss = css`
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  z-index: -1;`
+
+const WaveContainer = styled.section`
+  ${baseCss}
+  justify-content: flex-start;
   min-height: 112rem;
-  margin-bottom: ${spacing.lg};
 
   ${above.xs`
     min-height: 132rem;
@@ -29,15 +43,9 @@ const WaveContainer = styled.section`
   `}
 
   &::after {
+    ${baseAfterCss}
     background-image: url(${Wave});
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    content: '';
     height: 112rem;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
 
     ${above.xs`
       height: 132rem;
@@ -58,13 +66,8 @@ const WaveContainer = styled.section`
 `
 
 const SweepContainer = styled.section`
-  align-items: center;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  flex-direction: column;
+  ${baseCss}
   min-height: 120rem;
-  margin-bottom: ${spacing.xl};
 
   ${above.sm`
     min-height: 70rem;
@@ -79,15 +82,9 @@ const SweepContainer = styled.section`
   `}
 
   &::after {
+    ${baseAfterCss}
     background-image: url(${Sweep});
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    content: '';
-    position: absolute;
     height: 120rem;
-    width: 100%;
-    z-index: -1;
 
     ${above.sm`
       height: 70rem;
@@ -103,7 +100,36 @@ const SweepContainer = styled.section`
   }
 `
 
+
+const FooterContainer = styled.section`
+  ${baseCss}
+  min-height: 40rem;
+
+  ${above.md`
+    min-height: 50rem;
+  `}
+
+  ${above.lg`
+    min-height: 70rem;
+  `}
+
+  &::after {
+    ${baseAfterCss}
+    background-image: url(${Footer});
+    height: 40rem;
+
+    ${above.md`
+      height: 50rem;
+    `}
+
+    ${above.lg`
+      height: 70rem;
+    `}
+  }
+`
+
 export {
   WaveContainer,
   SweepContainer,
+  FooterContainer,
 }

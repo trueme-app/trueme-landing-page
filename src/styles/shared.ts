@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { above, spacing, marginsPadding, typography } from './index'
+import { above, colours, marginsPadding, spacing, typography } from './index'
 
 const Container = styled.div`
   display: flex;
@@ -12,6 +12,7 @@ const Container = styled.div`
 `
 
 const Copy = styled.p`
+  color: ${(props) => colours[props.colour] ? colours[props.colour][props.variant] : 'currentColor'};
   font-size: ${(props) => props.size || typography.body.size.xs};
   font-weight: normal;
   letter-spacing: ${(props) => props.letterSpacing || typography.body}px;
