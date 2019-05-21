@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import * as React from 'react'
+import { connect } from 'react-redux'
 import AdviceIcon from '../assets/images/icon-advice.inline.svg'
 import DateIcon from '../assets/images/icon-dates.inline.svg'
 import FiltersIcon from '../assets/images/icon-filters.inline.svg'
@@ -14,9 +15,12 @@ import Button from '../components/button'
 import { ButtonContainer } from '../components/button/styles'
 import Footer from '../components/footer'
 import Grid from '../components/grid'
+import Header from '../components/header'
 import Heading from '../components/heading'
 import Hero from '../components/hero'
+import Modal from '../components/modal'
 import ProductBenefit from '../components/product-benefit'
+import RegisterForm from '../components/register-form'
 import SEO from '../components/seo'
 import SocialProof from '../components/social-proof'
 import ValueProp from '../components/value-prop'
@@ -24,10 +28,27 @@ import Layout from '../layouts'
 import { Container, Copy, SVGContainer } from '../styles/shared'
 
 class IndexPage extends React.Component {
+  constructor() {
+    super()
+  }
+
+  openModal() {
+    const { toggleModal } = this.props
+    toggleModal(true)
+  }
+
   render() {
     return (
       <Layout>
         <SEO title='Home'/>
+        <Header>
+          <ButtonContainer>
+            <Button onClick={() => this.openModal()}>Sign up today</Button>
+          </ButtonContainer>
+        </Header>
+        <Modal>
+          <RegisterForm/>
+        </Modal>
         <Container>
           <Block type='wave'>
             <Grid>
@@ -41,7 +62,7 @@ class IndexPage extends React.Component {
               </Grid.Column>
             </Grid>
             <Container padding-top>
-              <Button hideMd={true}>Sign up today</Button>
+              <Button hideMd={true} onClick={() => this.openModal()}>Sign up today</Button>
             </Container>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
@@ -67,7 +88,7 @@ class IndexPage extends React.Component {
                 </ValueProp>
               </Grid.Column>
             </Grid>
-            <Button>Sign up today</Button>
+            <Button onClick={() => this.openModal()}>Sign up today</Button>
           </Block>
         </Container>
         <Container padding-bottom-xl>
@@ -115,7 +136,7 @@ class IndexPage extends React.Component {
         </Container>
         <Container padding-top-lg>
           <ButtonContainer padding-top-lg>
-            <Button>Sign Up Today</Button>
+            <Button onClick={() => this.openModal()}>Sign Up Today</Button>
           </ButtonContainer>
         </Container>
         <Block type='sweep'>
@@ -142,7 +163,7 @@ class IndexPage extends React.Component {
                 </ProductBenefit>
               </Grid.Column>
             </Grid>
-            <Button>Sign Up Today</Button>
+            <Button onClick={() => this.openModal()}>Sign Up Today</Button>
           </Container>
         </Block>
         <Container padding-bottom-xl>
@@ -180,7 +201,7 @@ class IndexPage extends React.Component {
               <Copy>Help schedule dates based on your availability</Copy>
             </ProductBenefit.Item>
           </ProductBenefit>
-          <Button>Sign Up Today</Button>
+          <Button onClick={() => this.openModal()}>Sign Up Today</Button>
         </Container>
         <Block type='footer'>
           <Container padding-top-xxxl>
@@ -189,7 +210,7 @@ class IndexPage extends React.Component {
                 <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
                 <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
                 <ButtonContainer margin-top-xl>
-                  <Button>Sign Up Today</Button>
+                  <Button onClick={() => this.openModal()}>Sign Up Today</Button>
                 </ButtonContainer>
               </Grid.Column>
             </Grid>
@@ -201,4 +222,26 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage
+
+const mapStateToProps = state => {
+  return {
+    modal: {
+      isOpen: state.modal.open,
+    }
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleModal: (isOpen) =>
+      dispatch({
+        type: 'TOGGLE_MODAL',
+        value: isOpen
+      })
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(IndexPage)

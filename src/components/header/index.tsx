@@ -3,16 +3,19 @@ import Logo from '../../assets/images/logo.inline.svg'
 import Button from '../button'
 import { ButtonContainer, HeaderContainer, LogoContainer } from './styles'
 
-class Header extends React.Component {
+interface IHeader {
+  children?: React.ReactNode[]
+}
+
+class Header extends React.Component<IHeader> {
   render() {
+    const { children } = this.props
     return (
       <HeaderContainer>
         <LogoContainer>
           <Logo/>
         </LogoContainer>
-        <ButtonContainer>
-          <Button>Sign up today</Button>
-        </ButtonContainer>
+        {children}
       </HeaderContainer>
     )
   }

@@ -3,7 +3,7 @@ import React from 'react'
 import { Normalize } from 'styled-normalize'
 import Header from '../components/header'
 import { GlobalStyle } from '../styles/global'
-import { Container, Main } from './styles'
+import { Container } from './styles'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,8 +21,7 @@ const Layout = ({ children }) => (
       <>
         <Normalize />
         <GlobalStyle/>
-        <Header/>
-        <Main>{children}</Main>
+        {children}
       </>
     )}
   />

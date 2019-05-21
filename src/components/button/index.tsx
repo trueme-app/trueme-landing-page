@@ -22,11 +22,19 @@ class Button extends React.Component<IButton> {
     hideXl: false,
   }
 
+  onClick() {
+    const { onClick } = this.props
+
+    if (onClick) {
+      onClick()
+    }
+  }
+
   render() {
     const { label, children, type, hideXs, hideSm, hideMd, hideLg, hideXl }: IButton = this.props
 
     return (
-      <StyledButton as={type} hideXs={hideXs} hideSm={hideSm} hideMd={hideMd} hideLg={hideLg} hideXl={hideXl}>{label || children}</StyledButton>
+      <StyledButton onClick={() => this.onClick()} as={type} hideXs={hideXs} hideSm={hideSm} hideMd={hideMd} hideLg={hideLg} hideXl={hideXl}>{label || children}</StyledButton>
     )
   }
 }
