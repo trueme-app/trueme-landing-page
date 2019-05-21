@@ -16,6 +16,7 @@ import { ButtonContainer } from '../components/button/styles'
 import Footer from '../components/footer'
 import Grid from '../components/grid'
 import Header from '../components/header'
+import { ButtonContainer as HeaderButtonContainer } from '../components/header/styles'
 import Heading from '../components/heading'
 import Hero from '../components/hero'
 import Modal from '../components/modal'
@@ -42,9 +43,9 @@ class IndexPage extends React.Component {
       <Layout>
         <SEO title='Home'/>
         <Header>
-          <ButtonContainer>
+          <HeaderButtonContainer>
             <Button onClick={() => this.openModal()}>Sign up today</Button>
-          </ButtonContainer>
+          </HeaderButtonContainer>
         </Header>
         <Modal>
           <RegisterForm/>

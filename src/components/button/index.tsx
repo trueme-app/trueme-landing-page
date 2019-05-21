@@ -1,25 +1,17 @@
 import * as React from 'react'
-import { StyledButton } from './styles'
+import { LoadingContainer, StyledButton, VisibilitySwitcher } from './styles'
+import { ClipLoader } from 'react-spinners'
+import { colours } from '../../styles'
 
 interface IButton {
   label?: string
   children?: React.ReactNode,
   type?: 'button' | 'a',
-  hideXs?: boolean,
-  hideSm?: boolean,
-  hideMd?: boolean,
-  hideLg?: boolean,
-  hideXl?: boolean,
 }
 
 class Button extends React.Component<IButton> {
   static defaultProps = {
     type: 'button',
-    hideXs: false,
-    hideSm: false,
-    hideMd: false,
-    hideLg: false,
-    hideXl: false,
   }
 
   onClick() {
@@ -31,10 +23,19 @@ class Button extends React.Component<IButton> {
   }
 
   render() {
-    const { label, children, type, hideXs, hideSm, hideMd, hideLg, hideXl }: IButton = this.props
+    const { label, children, type, loading }: IButton = this.props
 
     return (
-      <StyledButton onClick={() => this.onClick()} as={type} hideXs={hideXs} hideSm={hideSm} hideMd={hideMd} hideLg={hideLg} hideXl={hideXl}>{label || children}</StyledButton>
+      <StyledButton {...this.props} onClick={() => this.onClick()} as={type}>
+        <VisibilitySwitcher visible={loading}>
+          <LoadingContainer>
+            <ClipLoader size={16} loading={loading} color={colours.grey.light}/>
+          </LoadingContainer>
+        </VisibilitySwitcher>
+        <VisibilitySwitcher visible={!loading}>
+          {(label || children)}
+        </VisibilitySwitcher>
+      </StyledButton>
     )
   }
 }

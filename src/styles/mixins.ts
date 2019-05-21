@@ -1,3 +1,4 @@
+import { rgba } from 'polished'
 import { css } from 'styled-components'
 import spacing from './spacing'
 
@@ -50,4 +51,24 @@ export const marginsPadding = (props) => {
   })
 
   return css`${classes}`
+}
+
+export const focusState = (backgroundColor, borderRadius, size = 3) => {
+  return css`
+    &:focus {
+      outline: none;
+      position: relative;
+
+      &::after {
+        border-radius: ${borderRadius};
+        border: 1.5px dotted ${backgroundColor};
+        bottom: -${size}px;
+        content: '';
+        left: -${size}px;
+        position: absolute;
+        right: -${size}px;
+        top: -${size}px;
+      }
+    }
+  `
 }

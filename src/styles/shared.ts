@@ -19,6 +19,11 @@ const Copy = styled.p`
   line-height: ${(props) => props.lineHeight};
   margin: 1rem 0;
 
+  ${(props) => props.half ? `
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;`:``}
+
   ${(props) => Object.keys(typography.body.size).map((size) =>
     above[size]`
       font-size: ${typography.body.size[size]};

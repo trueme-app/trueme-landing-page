@@ -1,23 +1,29 @@
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { colours, easing, gpuStyles, spacing, timing } from '../../styles'
+import { above, colours, easing, spacing, timing } from '../../styles'
 
 const ModalContainer = styled.div`
   align-items: center;
   background-color: ${colours.grey.base};
-  box-shadow: 0 20px 10px -10px ${rgba(colours.green.dark, .1)};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   left: 0;
   padding: ${spacing.lg};
   position: fixed;
   top: 0;
-  transition: transform ${timing.slow} ${easing.default};
+  transition: transform ${timing.slow} ${easing.default}, box-shadow ${timing.slow} ${easing.default};
   width: 100vw;
+  z-index: 2;
+
+  ${above.sm`
+    height: auto;
+  `}
 
   ${(props) => props.isOpen ?`
     transform: translateY(0);
+    box-shadow: 0 ${spacing.lg} ${spacing.md} -${spacing.md} ${rgba(colours.green.dark, .1)};
   `:`
     transform: translateY(-100%);
   `}
@@ -26,6 +32,11 @@ const ModalContainer = styled.div`
 const CloseButton = styled.button`
   border: 0;
   background-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
 `
 
 const ModalHeader = styled.div`

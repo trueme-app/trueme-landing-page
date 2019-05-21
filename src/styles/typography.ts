@@ -12,7 +12,7 @@ const typeSizes = {
     sm: '1rem',
   },
   body: {
-    xs: '.8rem',
+    xs: '1.14rem',
     sm: '1.14rem',
   },
 }
