@@ -1,7 +1,7 @@
 const timing = {
   fast: '.1s',
   default: '.25s',
-  slow: '1s',
+  slow: '.5s',
 }
 
 const easing = {

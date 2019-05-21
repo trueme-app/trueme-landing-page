@@ -3,25 +3,24 @@ import { rgba } from 'polished'
 import { colours, easing, gpuStyles, spacing, timing } from '../../styles'
 
 const ModalContainer = styled.div`
+  align-items: center;
   background-color: ${colours.grey.base};
   box-shadow: 0 20px 10px -10px ${rgba(colours.green.dark, .1)};
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
   left: 0;
   padding: ${spacing.lg};
-  position: absolute;
-  top: -15rem;
-  transition: top ${timing.default} ${easing.slow};
+  position: fixed;
+  top: 0;
+  transition: transform ${timing.slow} ${easing.default};
   width: 100vw;
 
-  ${gpuStyles}
-
   ${(props) => props.isOpen ?`
-    top: 0;
-    transition: top ${timing.default} ${easing.slow};
-  `:``}
+    transform: translateY(0);
+  `:`
+    transform: translateY(-100%);
+  `}
 `
 
 const CloseButton = styled.button`

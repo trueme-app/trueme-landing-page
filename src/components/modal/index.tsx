@@ -21,7 +21,6 @@ class Modal extends React.Component<IModal> {
   }
 
   render() {
-    console.log(this.props)
     const { children, isOpen }: IModal = this.props
     return (<ModalContainer isOpen={isOpen}>
       <ModalHeader>
