@@ -15,7 +15,7 @@ class Modal extends React.Component<IModal> {
     super()
   }
 
-  closeModal() {
+  closeModal = () => {
     const { toggleModal } = this.props
     toggleModal(false)
   }
@@ -26,7 +26,7 @@ class Modal extends React.Component<IModal> {
       <ModalHeader>
         <Logo/>
         <CloseButton>
-          <CloseIcon onClick={() => this.closeModal()}/>
+          <CloseIcon onClick={this.closeModal}/>
         </CloseButton>
       </ModalHeader>
       {children}

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { rgba } from 'polished'
+import styled from 'styled-components'
 import { above, colours, easing, spacing, timing } from '../../styles'
 
 const ModalContainer = styled.div`
@@ -17,21 +17,23 @@ const ModalContainer = styled.div`
   width: 100vw;
   z-index: 2;
 
+  /* stylelint-disable */
   ${above.sm`
     height: auto;
   `}
 
   ${(props) => props.isOpen ?`
-    transform: translateY(0);
     box-shadow: 0 ${spacing.lg} ${spacing.md} -${spacing.md} ${rgba(colours.green.dark, .1)};
+    transform: translateY(0);
   `:`
     transform: translateY(-100%);
   `}
+  /* stylelint-enable */
 `
 
 const CloseButton = styled.button`
-  border: 0;
   background-color: transparent;
+  border: 0;
   cursor: pointer;
 
   &:focus {

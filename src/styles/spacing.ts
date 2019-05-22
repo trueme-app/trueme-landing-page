@@ -5,9 +5,10 @@ const spacing = {
   default: '8px',
   md: '14px',
   lg: '24px',
-  xl: '48px',
-  xxl: '86px',
-  xxxl: '132px',
+  xl: '32px',
+  xxxl: '48px',
+  xxxl: '86px',
+  xxxxl: '132px',
 }
 
 export default spacing

@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import DatabaseService from '../../services/database'
 import { EMAIL_REGEX, REGISTRATION_URL } from '../../constants'
+import DatabaseService from '../../services/database'
 import { Copy } from '../../styles/shared'
 import Button from '../button'
 import Heading from '../heading'
-import { RegisterFormContainer, Form, Input } from './styles'
+import { Form, Input, RegisterFormContainer } from './styles'
 
 class RegisterForm extends React.Component {
   constructor() {
@@ -17,7 +17,11 @@ class RegisterForm extends React.Component {
     }
   }
 
-  async submitForm() {
+  submitForm = async (e) => {
+    if (e) {
+      e.preventDefault()
+    }
+
     this.setState({ loading: true })
 
     try {
@@ -26,13 +30,14 @@ class RegisterForm extends React.Component {
       toggleModal(false)
       window.open(REGISTRATION_URL)
     } catch(ex) {
-
+      // TODO
+      console.log(ex)
     } finally {
       this.setState({ loading: false })
     }
   }
 
-  onChange(e) {
+  onChange = (e) => {
     const email = e.target.value
     const isEmailValid = e.target.value.match(EMAIL_REGEX)
     this.setState({ email, isEmailValid })
@@ -51,9 +56,9 @@ class RegisterForm extends React.Component {
       <RegisterFormContainer>
         <Heading level={2}>Register your email to join.</Heading>
         <Copy half>You will be then be taken to complete your profile.</Copy>
-        <Form>
-          <Input ref={(input) => { this.emailInput = input; }} type='email' onChange={(e) => this.onChange(e)} value={this.state.email} placeholder='Enter email address' required/>
-          <Button disabled={!this.state.isEmailValid} onClick={() => this.submitForm()} loading={this.state.loading} padding-top-md padding-bottom-md>
+        <Form onSubmit={this.submitForm}>
+          <Input ref={(input) => { this.emailInput = input }} type='email' onChange={this.onChange} value={this.state.email} placeholder='Enter email address' required/>
+          <Button disabled={!this.state.isEmailValid} onClick={this.submitForm} loading={this.state.loading} padding-top-md padding-bottom-md>
             Submit
           </Button>
         </Form>

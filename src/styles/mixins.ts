@@ -60,8 +60,8 @@ export const focusState = (backgroundColor, borderRadius, size = 3) => {
       position: relative;
 
       &::after {
-        border-radius: ${borderRadius};
         border: 1.5px dotted ${backgroundColor};
+        border-radius: ${borderRadius};
         bottom: -${size}px;
         content: '';
         left: -${size}px;

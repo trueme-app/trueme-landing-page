@@ -1,48 +1,54 @@
 import styled from 'styled-components'
 import { above, below, borderRadius, colours, focusState, spacing } from '../../styles'
 
-const RegisterFormContainer = styled.form`
+const RegisterFormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${spacing.xxl};
+  margin-top: ${spacing.xxxl};
   text-align: center;
 
+  /* stylelint-disable */
   ${above.sm`
     width: 45rem;
   `}
+  /* stylelint-enable */
 `
 
-const Form = styled.div`
+const Form = styled.form`
   display: flex;
-  font-size: 1.2rem;
   flex-direction: column;
+  font-size: 1.2rem;
 
+  /* stylelint-disable */
   ${below.sm`
-    margin-top: ${spacing.xxl};
+    margin-top: ${spacing.xxxl};
   `}
 
   ${above.sm`
     flex-direction: row;
-    margin: ${spacing.xl} 0;
+    margin: ${spacing.xxl} 0;
   `}
+  /* stylelint-enable */
 `
 
 const Input = styled.input`
-  border-radius: ${borderRadius.md};
   border: 1px solid ${colours.grey.mid};
-  padding: ${spacing.lg};
+  border-radius: ${borderRadius.md};
   margin-bottom: ${spacing.lg};
+  padding: ${spacing.lg};
 
   &:focus {
-    outline: none;
     box-shadow: 0 2px 4px -4px ${colours.green.dark};
+    outline: none;
   }
 
+  /* stylelint-disable */
   ${above.sm`
     flex: 2;
     margin-bottom: 0;
     margin-right: ${spacing.lg};
   `}
+  /* stylelint-enable */
 `
 
 export {

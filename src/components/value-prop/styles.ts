@@ -6,7 +6,7 @@ import { GridColumnContainer, GridContainer } from '../grid/styles'
 const ValuePropContainer = styled(GridContainer)`
   list-style: none;
   margin: 0;
-  padding: ${spacing.xl} 0!important;
+  padding: ${spacing.xxl} 0!important;
 `
 const ValuePropItemContainer = styled(GridColumnContainer)`
   align-items: center;
@@ -14,14 +14,11 @@ const ValuePropItemContainer = styled(GridColumnContainer)`
   border-radius: 13px;
   min-height: 4.1rem;
   padding: 0 ${spacing.lg};
+  margin: ${spacing.sm} 0;
 
   /* stylelint-disable */
   ${above.sm`
     margin: ${spacing.sm};
-  `}
-
-  ${above.md`
-    margin: ${spacing.md};
   `}
   /* stylelint-enable */
 `

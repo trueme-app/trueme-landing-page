@@ -8,10 +8,12 @@ const StyledButton = styled.button`
   color: ${colours.grey.base};
   display: ${(props) => props.hideXs ? 'none': 'flex'};
   justify-content: center;
-  padding: ${spacing.md} ${spacing.xl};
+  min-width: 12.5rem;
+  padding: ${spacing.md} ${spacing.xxl};
   position: relative;
   text-transform: uppercase;
 
+  /* stylelint-disable */
   ${focusState(colours.rose.base, borderRadius.md)}
   ${(props) => marginsPadding(props)};
   ${(props) => props.disabled ? `
@@ -23,7 +25,6 @@ const StyledButton = styled.button`
     background-color: ${colours.rose.dark};
   }
 
-  /* stylelint-disable */
   ${above.xs`
     display: ${(props) => props.hideXs ? 'none': 'flex'};
   `}
@@ -58,8 +59,8 @@ const VisibilitySwitcher = styled.span`
 `
 
 const LoadingContainer = styled.span`
-  position: absolute;
   left: 50%;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
 `

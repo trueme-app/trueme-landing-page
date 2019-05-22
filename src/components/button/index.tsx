@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { LoadingContainer, StyledButton, VisibilitySwitcher } from './styles'
 import { ClipLoader } from 'react-spinners'
 import { colours } from '../../styles'
+import { LoadingContainer, StyledButton, VisibilitySwitcher } from './styles'
 
 interface IButton {
   label?: string
@@ -14,7 +14,7 @@ class Button extends React.Component<IButton> {
     type: 'button',
   }
 
-  onClick() {
+  onClick = () => {
     const { onClick } = this.props
 
     if (onClick) {
@@ -26,7 +26,7 @@ class Button extends React.Component<IButton> {
     const { label, children, type, loading }: IButton = this.props
 
     return (
-      <StyledButton {...this.props} onClick={() => this.onClick()} as={type}>
+      <StyledButton {...this.props} onClick={this.onClick} as={type}>
         <VisibilitySwitcher visible={loading}>
           <LoadingContainer>
             <ClipLoader size={16} loading={loading} color={colours.grey.light}/>

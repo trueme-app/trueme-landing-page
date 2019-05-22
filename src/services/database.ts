@@ -1,5 +1,5 @@
+import firebase from 'firebase/app'
 import { db } from '../config/firebase'
-import firebase from '@firebase/app'
 
 class DatabaseService {
   static async setRegistration(email) {

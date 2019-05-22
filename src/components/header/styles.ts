@@ -10,7 +10,7 @@ const HeaderContainer = styled(Container)`
   /* stylelint-disable */
   ${above.sm`
     justify-content: space-between;
-    padding: ${spacing.lg};
+    padding: ${spacing.xl} ${spacing.lg} ${spacing.xxxl};
   `}
   /* stylelint-enable */
 `

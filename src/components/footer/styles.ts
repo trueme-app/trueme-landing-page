@@ -35,12 +35,12 @@ const Input = styled.input`
   width: 100%;
 
   &::placeholder {
-    color ${colours.green.dark};
+    color: ${colours.green.dark};
   }
 
   &:focus {
-    outline: none;
     box-shadow: 0 2px 4px -4px ${colours.green.dark};
+    outline: none;
   }
 `
 
@@ -49,7 +49,10 @@ const IconContainer = styled.div`
 `
 
 const linkCss = css`
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
+
     svg {
       path {
         fill: ${colours.green.base};

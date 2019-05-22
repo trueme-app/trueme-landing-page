@@ -1,5 +1,5 @@
-import firebase from '@firebase/app'
-import '@firebase/firestore'
+import firebase from 'firebase/app'
+import 'firebase/firestore'
 
 interface IConfig {
   apiKey: string,
@@ -16,8 +16,8 @@ const config = {
   storageBucket: 'trueme-be19e.appspot.com',
   messagingSenderId: '163436224599',
   appId: '1:163436224599:web:ed224cfa9e2b38c4'
-};
+}
 
-firebase.initializeApp(config);
+firebase.initializeApp(config)
 
-export const db = firebase.firestore();
+export const db = firebase.firestore()

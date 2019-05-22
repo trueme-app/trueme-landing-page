@@ -27,16 +27,12 @@ const WaveContainer = styled.section`
   justify-content: flex-start;
   min-height: 112rem;
 
-  ${above.xs`
-    min-height: 132rem;
-  `}
-
   ${above.sm`
     min-height: 142rem;
   `}
 
   ${above.md`
-    min-height: 112rem;
+    min-height: 106rem;
   `}
 
   ${above.xl`
@@ -50,16 +46,13 @@ const WaveContainer = styled.section`
     background-image: url(${Wave});
     height: 112rem;
 
-    ${above.xs`
-      height: 132rem;
-    `}
 
     ${above.sm`
       height: 142rem;
     `}
 
     ${above.md`
-      height: 112rem;
+      height: 106rem;
     `}
 
     ${above.xl`
@@ -73,17 +66,11 @@ const SweepContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
   min-height: 120rem;
+  position: relative;
+  top: -5rem;
 
   ${above.sm`
     min-height: 70rem;
-  `}
-
-  ${above.md`
-    min-height: 75rem;
-  `}
-
-  ${above.lg`
-    min-height: 85rem;
   `}
 
   &::after {
@@ -93,14 +80,6 @@ const SweepContainer = styled.section`
 
     ${above.sm`
       height: 70rem;
-    `}
-
-    ${above.md`
-      height: 75rem;
-    `}
-
-    ${above.lg`
-      height: 85rem;
     `}
   }
     /* stylelint-enable */

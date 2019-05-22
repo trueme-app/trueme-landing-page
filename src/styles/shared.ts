@@ -37,13 +37,21 @@ const UnstyledList = styled.ul`
   padding: 0;
 `
 
+const SpaceContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: .66;
+  justify-content: center;
+`
+
 const SVGContainer = styled.div`
   display: flex;
   ${(props) => marginsPadding(props)};
 
   ${(props) => {
     if (props['padding-xl']) {
-      return `padding: ${spacing.xl} 0`
+      return `padding: ${spacing.xxl} 0`
     }
   }};
 
@@ -56,6 +64,7 @@ const SVGContainer = styled.div`
 export {
   Container,
   Copy,
+  SpaceContainer,
   SVGContainer,
   UnstyledList,
 }

@@ -6,7 +6,7 @@ import { GridColumnContainer, GridContainer } from '../grid/styles'
 const ProductBenefitContainer = styled(GridContainer)`
   list-style: none;
   margin: 0;
-  padding: ${spacing.xl} 0!important;
+  padding: ${spacing.xxl} 0!important;
 `
 const ProductBenefitItemContainer = styled(GridColumnContainer)`
   align-items: flex-start;

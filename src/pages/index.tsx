@@ -26,14 +26,14 @@ import SEO from '../components/seo'
 import SocialProof from '../components/social-proof'
 import ValueProp from '../components/value-prop'
 import Layout from '../layouts'
-import { Container, Copy, SVGContainer } from '../styles/shared'
+import { Container, Copy, SpaceContainer, SVGContainer } from '../styles/shared'
 
 class IndexPage extends React.Component {
   constructor() {
     super()
   }
 
-  openModal() {
+  openModal = () => {
     const { toggleModal } = this.props
     toggleModal(true)
   }
@@ -44,7 +44,7 @@ class IndexPage extends React.Component {
         <SEO title='Home'/>
         <Header>
           <HeaderButtonContainer>
-            <Button onClick={() => this.openModal()}>Sign up today</Button>
+            <Button onClick={this.openModal}>Sign up today</Button>
           </HeaderButtonContainer>
         </Header>
         <Modal>
@@ -62,8 +62,8 @@ class IndexPage extends React.Component {
                 <Heading level={3}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
               </Grid.Column>
             </Grid>
-            <Container padding-top>
-              <Button hideMd={true} onClick={() => this.openModal()}>Sign up today</Button>
+            <Container padding-top-md>
+              <Button hideMd={true} onClick={this.openModal}>Sign up today</Button>
             </Container>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
@@ -72,24 +72,30 @@ class IndexPage extends React.Component {
                 </SVGContainer>
               </Grid.Column>
             </Grid>
-            <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
-                <Heading level={1}>Are you frustrated with the current ways to meet new people?</Heading>
-              </Grid.Column>
-            </Grid>
-            <Grid>
-              <Grid.Column>
-                <ValueProp>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 1, end: 5 }}>Fear of sharing your personal circumstance</ValueProp.Item>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 5, end: 9 }}>People who don't share your values</ValueProp.Item>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 9, end: 13 }}>Fake profiles</ValueProp.Item>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 1, end: 5 }}>Endless swiping</ValueProp.Item>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 5, end: 9 }}>Ghosting</ValueProp.Item>
-                  <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 9, end: 13 }}>Hook-ups, not meaningful connections</ValueProp.Item>
-                </ValueProp>
-              </Grid.Column>
-            </Grid>
-            <Button onClick={() => this.openModal()}>Sign up today</Button>
+            <SpaceContainer>
+              <Grid>
+                <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
+                  <Heading level={1}>Are you frustrated with the current ways to meet new people?</Heading>
+                </Grid.Column>
+              </Grid>
+              <Container padding-top-lg padding-bottom-lg>
+                <Grid>
+                  <Grid.Column>
+                    <ValueProp>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 1, end: 5 }}>Fear of sharing your personal circumstance</ValueProp.Item>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 5, end: 9 }}>People who don't share your values</ValueProp.Item>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 9, end: 13 }}>Fake profiles</ValueProp.Item>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 1, end: 5 }}>Endless swiping</ValueProp.Item>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 5, end: 9 }}>Ghosting</ValueProp.Item>
+                      <ValueProp.Item xs={{ start: 2, end: 12 }} md={{ start: 9, end: 13 }}>Hook-ups, not meaningful connections</ValueProp.Item>
+                    </ValueProp>
+                  </Grid.Column>
+                </Grid>
+              </Container>
+              <Container padding-top-lg>
+                <Button onClick={this.openModal}>Sign up today</Button>
+              </Container>
+            </SpaceContainer>
           </Block>
         </Container>
         <Container padding-bottom-xl>
@@ -137,35 +143,37 @@ class IndexPage extends React.Component {
         </Container>
         <Container padding-top-lg>
           <ButtonContainer padding-top-lg>
-            <Button onClick={() => this.openModal()}>Sign Up Today</Button>
+            <Button onClick={this.openModal}>Sign Up Today</Button>
           </ButtonContainer>
         </Container>
         <Block type='sweep'>
-          <Container padding-top-xxxl>
-            <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }}>
-                <Heading level={1}>Why do so many choose Trueme?</Heading>
-                <ProductBenefit>
-                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
-                    <AdviceIcon/>
-                    <Heading level={2}>Advice</Heading>
-                    <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
-                  </ProductBenefit.Item>
-                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
-                    <FriendshipIcon/>
-                    <Heading level={2}>Friendship</Heading>
-                    <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
-                  </ProductBenefit.Item>
-                  <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
-                    <LoveIcon/>
-                    <Heading level={2}>Love</Heading>
-                    <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
-                  </ProductBenefit.Item>
-                </ProductBenefit>
-              </Grid.Column>
-            </Grid>
-            <Button onClick={() => this.openModal()}>Sign Up Today</Button>
-          </Container>
+          <SpaceContainer>
+            <Container padding-top-xxxl>
+              <Grid>
+                <Grid.Column xs={{ start: 2, end: 12 }}>
+                  <Heading level={1}>Why do so many choose Trueme?</Heading>
+                  <ProductBenefit>
+                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
+                      <AdviceIcon/>
+                      <Heading level={2}>Advice</Heading>
+                      <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
+                    </ProductBenefit.Item>
+                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
+                      <FriendshipIcon/>
+                      <Heading level={2}>Friendship</Heading>
+                      <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
+                    </ProductBenefit.Item>
+                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
+                      <LoveIcon/>
+                      <Heading level={2}>Love</Heading>
+                      <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
+                    </ProductBenefit.Item>
+                  </ProductBenefit>
+                </Grid.Column>
+              </Grid>
+              <Button onClick={this.openModal}>Sign Up Today</Button>
+            </Container>
+          </SpaceContainer>
         </Block>
         <Container padding-bottom-xl>
           <Grid>
@@ -202,7 +210,7 @@ class IndexPage extends React.Component {
               <Copy>Help schedule dates based on your availability</Copy>
             </ProductBenefit.Item>
           </ProductBenefit>
-          <Button onClick={() => this.openModal()}>Sign Up Today</Button>
+          <Button onClick={this.openModal}>Sign Up Today</Button>
         </Container>
         <Block type='footer'>
           <Container padding-top-xxxl>
@@ -211,7 +219,7 @@ class IndexPage extends React.Component {
                 <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
                 <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
                 <ButtonContainer margin-top-xl>
-                  <Button onClick={() => this.openModal()}>Sign Up Today</Button>
+                  <Button onClick={this.openModal}>Sign Up Today</Button>
                 </ButtonContainer>
               </Grid.Column>
             </Grid>
