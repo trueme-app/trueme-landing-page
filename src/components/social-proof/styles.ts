@@ -6,11 +6,11 @@ const SocialProofContainer = styled.div``
 const SocialProofItemContainer = styled.blockquote``
 
 const SocialProofQuoteContainer = styled.p`
-  font-family: ${typography.h2.font};
-  font-size: ${typography.h2.size.xs};
+  font-family: ${typography.h1.font};
+  font-size: ${typography.h1.size.xs};
   font-weight: normal;
-  letter-spacing: ${typography.h2.letterSpacing}px;
-  line-height: ${typography.h2.lineHeight};
+  letter-spacing: ${typography.h1.letterSpacing}px;
+  line-height: ${typography.h1.lineHeight};
   margin: 1rem 0;
   text-align: center;
 
@@ -23,9 +23,9 @@ const SocialProofQuoteContainer = styled.p`
   }
 
   /* stylelint-disable */
-  ${Object.keys(typography.h2.size).map((size) =>
+  ${Object.keys(typography.h1.size).map((size) =>
     above[size]`
-      font-size: ${typography.h2.size[size]};
+      font-size: ${typography.h1.size[size]};
     `)
   }
   /* stylelint-enable */

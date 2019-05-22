@@ -65,7 +65,7 @@ const WaveContainer = styled.section`
 const SweepContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
-  min-height: 120rem;
+  min-height: 140rem;
 
   ${above.sm`
     margin-bottom: ${spacing.xxxxl};
@@ -79,7 +79,7 @@ const SweepContainer = styled.section`
   &::after {
     ${baseAfterCss}
     background-image: url(${Sweep});
-    height: 120rem;
+    height: 140rem;
 
     ${above.sm`
       height: 83rem;

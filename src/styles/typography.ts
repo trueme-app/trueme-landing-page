@@ -4,13 +4,16 @@ const typeSizes = {
     sm: '2.5rem',
   },
   h2: {
-    xs: '1.42rem',
-    sm: '1.575rem',
-    md: '1.875rem',
+    xs: '1.78rem',
+    sm: '1.85rem',
   },
   h3: {
+    xs: '1.25rem',
+    sm: '1.875rem',
+  },
+  h4: {
     xs: '1rem',
-    sm: '1rem',
+    sm: '1.25rem',
   },
   body: {
     xs: '1.14rem',
@@ -37,8 +40,14 @@ const typography = {
     lineHeight: 1.25,
   },
   h3: {
-    font: fonts.body,
+    font: fonts.heading,
     size: typeSizes.h3,
+    letterSpacing: 1.14,
+    lineHeight: 1.25,
+  },
+  h4: {
+    font: fonts.body,
+    size: typeSizes.h4,
     letterSpacing: 0,
     lineHeight: 1.25,
   },

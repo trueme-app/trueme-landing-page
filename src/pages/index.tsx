@@ -58,8 +58,8 @@ class IndexPage extends React.Component {
               </Grid.Column>
             </Grid>
             <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 5, end: 9 }}>
-                <Heading level={3}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
+              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 4, end: 10 }}>
+                <Heading level={4}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
               </Grid.Column>
             </Grid>
             <Container padding-top-md>
@@ -78,7 +78,7 @@ class IndexPage extends React.Component {
                   <Heading level={1}>Are you frustrated with the current ways to meet new people?</Heading>
                 </Grid.Column>
               </Grid>
-              <Container padding-top-lg padding-bottom-lg>
+              <Container>
                 <Grid>
                   <Grid.Column>
                     <ValueProp>
@@ -92,7 +92,7 @@ class IndexPage extends React.Component {
                   </Grid.Column>
                 </Grid>
               </Container>
-              <Container padding-top-lg>
+              <Container padding-bottom-xxl>
                 <Button onClick={this.openModal}>Sign up today</Button>
               </Container>
             </SpaceContainer>
@@ -101,13 +101,15 @@ class IndexPage extends React.Component {
         <Container padding-bottom-xl>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>
-              <Heading level={1}>Who is Trueme for?</Heading>
+              <Container padding-bottom-lg>
+                <Heading level={1}>Who is Trueme for?</Heading>
+              </Container>
             </Grid.Column>
             <Grid.Column align='center' xs={{ start: 3, end: 11 }} sm={{ start: 1, end: 4 }}>
-              <div>
-                <Heading level={2}>Single Parents</Heading>
+              <Container>
+                <Heading level={3}>Single Parents</Heading>
                 <Copy>People who can share their personal story with confidence</Copy>
-              </div>
+              </Container>
             </Grid.Column>
             <Grid.Column align='center' xs={{ start: 3, end: 11 }} sm={{ start: 5, end: 9 }}>
               <SVGContainer>
@@ -115,17 +117,17 @@ class IndexPage extends React.Component {
               </SVGContainer>
             </Grid.Column>
             <Grid.Column align='center' xs={{ start: 3, end: 11 }} sm={{ start: 10, end: 13 }}>
-              <div>
-                <Heading level={2}>Singles or Separated</Heading>
+              <Container>
+                <Heading level={3}>Singles or Separated</Heading>
                 <Copy>Open-minded people who are happy to accept a little baggage & are seeking companionship.</Copy>
-              </div>
+              </Container>
             </Grid.Column>
           </Grid>
         </Container>
         <Container padding-top>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>
-              <Heading level={3}>Hear it from our users</Heading>
+              <Heading level={4}>Hear it from our users</Heading>
             </Grid.Column>
           </Grid>
         </Container>
@@ -136,7 +138,7 @@ class IndexPage extends React.Component {
                 I finally feel like I can share my real story, without fear of judgment or people not accepting who I am
               </SocialProof.Quote>
               <SocialProof.Source>
-                Christy, Single Mum
+                Christie, Single Mum
               </SocialProof.Source>
             </SocialProof.Item>
           </SocialProof>
@@ -152,23 +154,31 @@ class IndexPage extends React.Component {
               <Grid>
                 <Grid.Column xs={{ start: 2, end: 12 }}>
                   <Heading level={1}>Why do so many choose Trueme?</Heading>
-                  <ProductBenefit>
-                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
-                      <AdviceIcon/>
-                      <Heading level={2}>Advice</Heading>
-                      <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
-                    </ProductBenefit.Item>
-                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
-                      <FriendshipIcon/>
-                      <Heading level={2}>Friendship</Heading>
-                      <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
-                    </ProductBenefit.Item>
-                    <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
-                      <LoveIcon/>
-                      <Heading level={2}>Love</Heading>
-                      <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
-                    </ProductBenefit.Item>
-                  </ProductBenefit>
+                  <Container padding-top-lg>
+                    <ProductBenefit>
+                      <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 5 }}>
+                        <AdviceIcon/>
+                        <Container margin-top-lg>
+                          <Heading level={2}>Advice</Heading>
+                          <Copy>Ask the questions you want to ask people who have been through your situation. Support & advice from our community.</Copy>
+                        </Container>
+                      </ProductBenefit.Item>
+                      <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 5, end: 9 }}>
+                        <FriendshipIcon/>
+                        <Container margin-top-lg>
+                          <Heading level={2}>Friendship</Heading>
+                          <Copy>Form lifelong bonds with people who share your values & experiences.</Copy>
+                        </Container>
+                      </ProductBenefit.Item>
+                      <ProductBenefit.Item xs={{ start: 2, end: 12 }} sm={{ start: 9, end: 13 }}>
+                        <LoveIcon/>
+                        <Container margin-top-lg>
+                          <Heading level={2}>Love</Heading>
+                          <Copy>Create meaningful relationships with people who are seeking long-term commitment & companionship.</Copy>
+                        </Container>
+                      </ProductBenefit.Item>
+                    </ProductBenefit>
+                  </Container>
                 </Grid.Column>
               </Grid>
               <Button onClick={this.openModal}>Sign Up Today</Button>
@@ -177,15 +187,20 @@ class IndexPage extends React.Component {
         </Block>
         <Container padding-bottom-xl>
           <Grid>
-            <Grid.Column xs={{ start: 2, end: 12 }}>
+            <Grid.Column xs={{ start: 2, end: 12 }} sm={{ start: 3, end: 11 }}>
               <Heading level={1}>Why is Trueme so different?</Heading>
-              <Copy>
-                The Trueme relationship platform allows people to show who they really are,
-                without fear of rejection or judgement. We embrace single-parents or people willing
-                to accept a little baggage, because we want to share your unique story. Feel safe to
-                be yourself & take your time to make meaningful connections. We’re with you every
-                step of the way.
-              </Copy>
+              <Container padding-top-lg>
+                <Copy>
+                  The Trueme relationship platform allows people to show who they really are,
+                  without fear of rejection or judgement. We embrace single-parents or people willing
+                  to accept a little baggage, because we want to share your unique story. Feel safe to
+                  be yourself & take your time to make meaningful connections. We’re with you every
+                  step of the way.
+                </Copy>
+                <Copy bold>
+                  To provide the best experience for you, we also:
+                </Copy>
+              </Container>
             </Grid.Column>
           </Grid>
           <ProductBenefit>

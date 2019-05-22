@@ -14,10 +14,10 @@ const Container = styled.div`
 const Copy = styled.p`
   color: ${(props) => colours[props.colour] ? colours[props.colour][props.variant] : 'currentColor'};
   font-size: ${(props) => props.size || typography.body.size.xs};
-  font-weight: normal;
+  font-weight: ${(props) => props.bold ? '800' : 'normal'};
   letter-spacing: ${(props) => props.letterSpacing || typography.body}px;
   line-height: ${(props) => props.lineHeight};
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
 
   ${(props) => props.half ? `
     width: 60%;
