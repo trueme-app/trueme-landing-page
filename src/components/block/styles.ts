@@ -36,7 +36,7 @@ const WaveContainer = styled.section`
   `}
 
   ${above.xl`
-    min-height: 125rem;
+    min-height: 126rem;
   `}
   /* stylelint-enable */
 
@@ -56,7 +56,7 @@ const WaveContainer = styled.section`
     `}
 
     ${above.xl`
-      min-height: 125rem;
+      min-height: 126rem;
     `}
     /* stylelint-enable */
   }
@@ -72,13 +72,17 @@ const SweepContainer = styled.section`
     min-height: 70rem;
   `}
 
+  ${above.lg`
+    min-height: 83rem;
+  `}
+
   &::after {
     ${baseAfterCss}
     background-image: url(${Sweep});
     height: 120rem;
 
     ${above.sm`
-      height: 70rem;
+      height: 83rem;
     `}
   }
     /* stylelint-enable */
@@ -97,7 +101,7 @@ const FooterContainer = styled.section`
   `}
 
   ${above.lg`
-    min-height: 60rem;
+    min-height: 63rem;
   `}
 
   &::after {
@@ -110,7 +114,7 @@ const FooterContainer = styled.section`
     `}
 
     ${above.lg`
-      height: 60rem;
+      height: 63rem;
     `}
   }
   /* stylelint-enable */
