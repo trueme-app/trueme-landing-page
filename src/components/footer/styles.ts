@@ -10,7 +10,11 @@ const DancingContainer = styled.div`
 
   ${above.sm`
     justify-content: flex-end;
-    margin-top: 0;
+    margin-top: -55px;
+  `}
+
+  ${above.md`
+    margin-top: -40px;
   `}
 `
 

@@ -66,10 +66,9 @@ const SweepContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
   min-height: 120rem;
-  position: relative;
-  top: -5rem;
 
   ${above.sm`
+    margin-bottom: ${spacing.xxxxl};
     min-height: 70rem;
   `}
 
@@ -90,13 +89,15 @@ const FooterContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
   min-height: 40rem;
+  position: relative;
+  top: -2rem;
 
   ${above.md`
     min-height: 50rem;
   `}
 
   ${above.lg`
-    min-height: 70rem;
+    min-height: 60rem;
   `}
 
   &::after {
@@ -109,7 +110,7 @@ const FooterContainer = styled.section`
     `}
 
     ${above.lg`
-      height: 70rem;
+      height: 60rem;
     `}
   }
   /* stylelint-enable */

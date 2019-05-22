@@ -213,17 +213,19 @@ class IndexPage extends React.Component {
           <Button onClick={this.openModal}>Sign Up Today</Button>
         </Container>
         <Block type='footer'>
-          <Container padding-top-xxxl>
-            <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
-                <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
-                <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
-                <ButtonContainer margin-top-xl>
-                  <Button onClick={this.openModal}>Sign Up Today</Button>
-                </ButtonContainer>
-              </Grid.Column>
-            </Grid>
-          </Container>
+          <SpaceContainer>
+            <Container padding-top-xxxl>
+              <Grid>
+                <Grid.Column xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 13 }} md={{ start: 3, end: 11 }}>
+                  <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
+                  <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
+                  <ButtonContainer margin-top-xl>
+                    <Button onClick={this.openModal}>Sign Up Today</Button>
+                  </ButtonContainer>
+                </Grid.Column>
+              </Grid>
+            </Container>
+          </SpaceContainer>
         </Block>
         <Footer/>
       </Layout>

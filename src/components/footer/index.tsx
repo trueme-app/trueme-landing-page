@@ -44,12 +44,12 @@ class Footer extends React.Component {
       <FooterContainer>
         <Container>
           <Grid textAlign='left'>
-            <Grid.Column order-sm={2} xs={{ start: 3, end: 12 }} sm={{ start: 7, end: 13 }}>
+            <Grid.Column order-sm={2} xs={{ start: 3, end: 12 }} sm={{ start: 8, end: 13 }}>
               <DancingContainer>
                 <Dancing/>
               </DancingContainer>
             </Grid.Column>
-            <Grid.Column order-sm={1} xs={{ start: 2, end: 12}} sm={{ start: 1, end: 7 }}>
+            <Grid.Column order-sm={1} xs={{ start: 2, end: 12}} sm={{ start: 1, end: 8 }}>
               <FormContainer onSubmit={this.onSubmit}>
                 <Heading level={2}>Sign-up to our newsletter to receive tips & advice, tailored for you</Heading>
                 <InputContainer>
