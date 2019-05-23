@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { EMAIL_REGEX, REGISTRATION_URL } from '../../constants'
 import DatabaseService from '../../services/database'
-import { Container, Copy, ErrorMessage } from '../../styles/shared'
+import { Container, Copy, ErrorMessage, HiddenLabel } from '../../styles/shared'
 import Button from '../button'
 import Heading from '../heading'
 import { Form, Input, RegisterFormContainer } from './styles'
@@ -70,7 +70,8 @@ class RegisterForm extends React.Component {
         <Heading level={2}>Register your email to join.</Heading>
         <Copy half>You will be then be taken to complete your profile.</Copy>
         <Form hasError={this.state.hasError} onSubmit={this.submitForm}>
-          <Input hasError={this.state.hasError} ref={(input) => { this.emailInput = input }} type='email' onChange={this.onChange} value={this.state.email} placeholder='Enter email address' required/>
+          <HiddenLabel htmlFor='email-modal'>Enter your email address</HiddenLabel>
+          <Input id='email-modal' hasError={this.state.hasError} ref={(input) => { this.emailInput = input }} type='email' onChange={this.onChange} value={this.state.email} placeholder='Enter email address' required/>
           <Button padding-top-lg padding-bottom-lg disabled={!this.state.isEmailValid} loading={this.state.loading}>
             Submit
           </Button>

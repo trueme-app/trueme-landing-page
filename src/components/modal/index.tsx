@@ -26,7 +26,7 @@ class Modal extends React.Component<IModal> {
       <ModalHeader>
         <Logo/>
         <CloseButton>
-          <CloseIcon onClick={this.closeModal}/>
+          <CloseIcon aria-label='Close Modal' onClick={this.closeModal}/>
         </CloseButton>
       </ModalHeader>
       {children}

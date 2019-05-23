@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { above, colours, marginsPadding, spacing, typography } from './index'
+import { above, colours, marginsPadding, spacing, typography, visuallyHidden } from './index'
 
 const Container = styled.div`
   align-items: center;
@@ -72,6 +72,10 @@ const ErrorMessage = styled(Copy)`
   `}
 `
 
+const HiddenLabel = styled.label`
+  ${visuallyHidden()}
+`
+
 export {
   Container,
   Copy,
@@ -79,4 +83,5 @@ export {
   SpaceContainer,
   SVGContainer,
   UnstyledList,
+  HiddenLabel,
 }

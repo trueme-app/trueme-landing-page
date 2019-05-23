@@ -7,7 +7,7 @@ import Dancing from '../../assets/images/illu-dancing-2.inline.svg'
 import { EMAIL_REGEX, REGISTRATION_URL } from '../../constants'
 import DatabaseService from '../../services/database'
 import { colours } from '../../styles'
-import { Container, Copy, ErrorMessage } from '../../styles/shared'
+import { Container, Copy, ErrorMessage, HiddenLabel } from '../../styles/shared'
 import Grid from '../grid'
 import Heading from '../heading'
 import {
@@ -81,8 +81,9 @@ class Footer extends React.Component {
               <FormContainer onSubmit={this.onSubmit}>
                 <Heading level={2}>Sign-up to our newsletter to receive tips & advice, tailored for you</Heading>
                 <InputContainer>
-                  <Input hasError={this.state.hasError} type='email' onChange={this.onChange} placeholder='Enter your email address' value={this.state.email} />
-                  <IconSubmitButton disabled={!this.state.isEmailValid}>
+                  <HiddenLabel htmlFor='email-footer'>Enter your Email</HiddenLabel>
+                  <Input id='email-footer' ref={(input) => { this.emailInput = input }} hasError={this.state.hasError} type='email' onChange={this.onChange} placeholder='Enter your email address' value={this.state.email} />
+                  <IconSubmitButton aria-label='Submit form' disabled={!this.state.isEmailValid}>
                     {this.state.loading && (<ClipLoader size={16} loading={true} color={colours.green.dark}/>)}
                     {!this.state.loading && (<ArrowIcon/>)}
                   </IconSubmitButton>
@@ -92,10 +93,10 @@ class Footer extends React.Component {
                 )}
               </FormContainer>
               <IconContainer>
-                <Instagram href='https://instagram.com/trueme.app'>
+                <Instagram aria-label='Visit Trueme on Instagram' href='https://instagram.com/trueme.app'>
                   <InstagramIcon />
                 </Instagram>
-                <Facebook href='https://facebook.com/truemedatingapp'>
+                <Facebook aria-label='Visit Trueme on Facebook' href='https://facebook.com/truemedatingapp'>
                   <FacebookIcon />
                 </Facebook>
               </IconContainer>

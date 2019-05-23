@@ -3,7 +3,7 @@ import borderRadius from './borders'
 import colours from './colours'
 import * as fontFiles from './fonts'
 import { grid, IGridConfig } from './grid'
-import { above, below, focusState, gpuStyles, marginsPadding } from './mixins'
+import { above, below, focusState, gpuStyles, marginsPadding, visuallyHidden } from './mixins'
 import spacing from './spacing'
 import { fonts, typeSizes, typography } from './typography'
 
@@ -24,4 +24,5 @@ export {
   timing,
   typeSizes,
   typography,
+  visuallyHidden,
 }
