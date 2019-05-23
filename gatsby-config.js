@@ -18,6 +18,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-offline`,
     'gatsby-plugin-webpack-bundle-analyzer',
