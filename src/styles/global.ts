@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
   button,
   input,
   ellipse,
+  polyline,
   path {
     transition: ${
       ['background-color', 'color', 'fill', 'stroke', 'box-shadow'].map((prop) => `${prop} ${timing.default} ${easing.default}${prop === 'box-shadow' ? `` : `, `}`)

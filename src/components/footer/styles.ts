@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components'
 import { above, colours, spacing } from '../../styles'
 
-const FooterContainer = styled.footer``
+const FooterContainer = styled.footer`
+  padding-bottom: ${spacing.xxl};
+`
 
 const DancingContainer = styled.div`
   display: flex;
@@ -28,7 +30,9 @@ const FormContainer = styled.form`
   `}
 `
 
-const InputContainer = styled.p``
+const InputContainer = styled.div`
+  position: relative;
+`
 
 const Input = styled.input`
   background-color: transparent;
@@ -77,6 +81,33 @@ const Instagram = styled.a`
   ${linkCss}
 `
 
+const IconSubmitButton = styled.button`
+  background: none;
+  border: none;
+  bottom: ${spacing.sm};
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+
+  /* stylelint-disable */
+  ${(props) => props.disabled ? `
+    opacity: 0;
+    pointer-events: none;
+  ` : ``}
+  /* stylelint-enable */
+
+  &:focus {
+    outline: none;
+    svg {
+      path,
+      polyline {
+        stroke: ${colours.green.base};
+      }
+    }
+  }
+`
+
 export {
   DancingContainer,
   Facebook,
@@ -86,4 +117,5 @@ export {
   Input,
   InputContainer,
   Instagram,
+  IconSubmitButton,
 }

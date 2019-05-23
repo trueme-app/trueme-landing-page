@@ -4,7 +4,7 @@ const typeSizes = {
     sm: '2.5rem',
   },
   h2: {
-    xs: '1.78rem',
+    xs: '1.7rem',
     sm: '1.85rem',
   },
   h3: {

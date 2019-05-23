@@ -61,9 +61,21 @@ const SVGContainer = styled.div`
   }
 `
 
+const ErrorMessage = styled(Copy)`
+  color: ${colours.rose.base};
+  font-size: .9rem !important;
+  font-weight: bold;
+  margin-top: ${spacing.lg};
+
+  ${above.sm`
+    margin-top: ${spacing.md};
+  `}
+`
+
 export {
   Container,
   Copy,
+  ErrorMessage,
   SpaceContainer,
   SVGContainer,
   UnstyledList,
