@@ -6,12 +6,12 @@ import { LoadingContainer, StyledButton, VisibilitySwitcher } from './styles'
 interface IButton {
   label?: string
   children?: React.ReactNode,
-  type?: 'button' | 'a',
+  htmlType?: 'button' | 'a',
 }
 
 class Button extends React.Component<IButton> {
   static defaultProps = {
-    type: 'button',
+    htmlType: 'button',
   }
 
   onClick = () => {
@@ -23,10 +23,10 @@ class Button extends React.Component<IButton> {
   }
 
   render() {
-    const { label, children, type, loading }: IButton = this.props
+    const { label, children, htmlType, loading }: IButton = this.props
 
     return (
-      <StyledButton {...this.props} onClick={this.onClick} as={type}>
+      <StyledButton {...this.props} onClick={this.onClick} as={htmlType}>
         <VisibilitySwitcher visible={loading}>
           <LoadingContainer>
             <ClipLoader size={16} loading={loading} color={colours.grey.light}/>
