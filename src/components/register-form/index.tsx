@@ -34,7 +34,11 @@ class RegisterForm extends React.Component {
 
       toggleModal(false)
 
-      window.open(REGISTRATION_URL)
+      const win = window.open(REGISTRATION_URL)
+
+      if (!win) {
+        window.location(REGISTRATION_URL)
+      }
 
       this.setState({
         email: '',
