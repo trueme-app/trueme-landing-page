@@ -49,7 +49,7 @@ class Footer extends React.Component {
       const win = window.open(REGISTRATION_URL)
 
       if (!win) {
-        window.location(REGISTRATION_URL)
+        window.location = REGISTRATION_URL;
       }
 
       this.setState({
