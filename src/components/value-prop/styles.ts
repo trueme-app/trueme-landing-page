@@ -12,9 +12,9 @@ const ValuePropItemContainer = styled(GridColumnContainer)`
   align-items: center;
   background-color: ${colours.grey.base};
   border-radius: 13px;
+  margin: ${spacing.sm} 0;
   min-height: 4.1rem;
   padding: 0 ${spacing.lg};
-  margin: ${spacing.sm} 0;
 
   /* stylelint-disable */
   ${above.sm`

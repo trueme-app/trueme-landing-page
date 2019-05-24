@@ -83,5 +83,5 @@ export const visuallyHidden = () => {
     position: absolute !important;
     top: 0;
     width: 1px !important;
-  `;
+  `
 }

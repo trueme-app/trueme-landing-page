@@ -40,8 +40,8 @@ const UnstyledList = styled.ul`
 const SpaceContainer = styled.div`
   align-items: center;
   display: flex;
-  flex-direction: column;
   flex: .66;
+  flex-direction: column;
   justify-content: center;
 `
 
