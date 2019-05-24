@@ -20,7 +20,9 @@ class RegisterForm extends React.Component {
   }
 
   submitForm = async (e) => {
-    e.preventDefault()
+    if (e) {
+      e.preventDefault()
+    }
 
     this.setState({
       loading: true,
@@ -76,7 +78,7 @@ class RegisterForm extends React.Component {
         <Form hasError={this.state.hasError} onSubmit={this.submitForm}>
           <HiddenLabel htmlFor='email-modal'>Enter your email address</HiddenLabel>
           <Input id='email-modal' hasError={this.state.hasError} ref={(input) => { this.emailInput = input }} type='email' onChange={this.onChange} value={this.state.email} placeholder='Enter email address' required/>
-          <Button padding-top-lg padding-bottom-lg disabled={!this.state.isEmailValid} loading={this.state.loading}>
+          <Button onClick={this.submitForm} padding-top-lg padding-bottom-lg disabled={!this.state.isEmailValid} loading={this.state.loading}>
             Submit
           </Button>
         </Form>

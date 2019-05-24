@@ -4,6 +4,7 @@ import { above, colours, easing, spacing, timing } from '../../styles'
 
 const ModalContainer = styled.div`
   align-items: center;
+  backface-visibility: hidden;
   background-color: ${colours.grey.base};
   box-sizing: border-box;
   display: flex;
@@ -11,10 +12,12 @@ const ModalContainer = styled.div`
   height: 100vh;
   left: 0;
   padding: ${spacing.lg};
+  perspective: 1000;
   position: fixed;
   top: 0;
   transition: transform ${timing.slow} ${easing.default}, box-shadow ${timing.slow} ${easing.default};
   width: 100vw;
+  will-change: transform;
   z-index: 2;
 
   /* stylelint-disable */

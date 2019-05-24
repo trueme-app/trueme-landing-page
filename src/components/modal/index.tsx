@@ -2,6 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import CloseIcon from '../../assets/images/icon-close.inline.svg'
 import Logo from '../../assets/images/logo.inline.svg'
+import { Container } from '../../styles/shared'
 import { CloseButton, ModalContainer, ModalHeader } from './styles'
 
 interface IModal {
@@ -22,15 +23,19 @@ class Modal extends React.Component<IModal> {
 
   render() {
     const { children, isOpen }: IModal = this.props
-    return (<ModalContainer isOpen={isOpen}>
-      <ModalHeader>
-        <Logo/>
-        <CloseButton>
-          <CloseIcon aria-label='Close Modal' onClick={this.closeModal}/>
-        </CloseButton>
-      </ModalHeader>
-      {children}
-    </ModalContainer>)
+    return (
+      <ModalContainer isOpen={isOpen}>
+        <Container>
+          <ModalHeader>
+            <Logo/>
+            <CloseButton onClick={this.closeModal}>
+              <CloseIcon aria-label='Close Modal'/>
+            </CloseButton>
+          </ModalHeader>
+          {children}
+        </Container>
+      </ModalContainer>
+    )
   }
 }
 

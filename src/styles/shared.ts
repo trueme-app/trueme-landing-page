@@ -8,6 +8,7 @@ const Container = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   max-width: 1300px;
+  width: 100%;
   ${(props) => marginsPadding(props)};
 `
 

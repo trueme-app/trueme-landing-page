@@ -42,14 +42,14 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title='Home'/>
+        <Modal>
+          <RegisterForm/>
+        </Modal>
         <Header>
           <HeaderButtonContainer>
             <Button onClick={this.openModal}>Sign up today</Button>
           </HeaderButtonContainer>
         </Header>
-        <Modal>
-          <RegisterForm/>
-        </Modal>
         <Block type='wave'>
           <Container>
             <Grid>
