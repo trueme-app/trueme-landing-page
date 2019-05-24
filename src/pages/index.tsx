@@ -50,8 +50,8 @@ class IndexPage extends React.Component {
         <Modal>
           <RegisterForm/>
         </Modal>
-        <Container>
-          <Block type='wave'>
+        <Block type='wave'>
+          <Container>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
                 <Heading level={1}>We know it’s tough to meet someone new as a single-parent. Luckily, we’ve changed that.</Heading>
@@ -96,8 +96,8 @@ class IndexPage extends React.Component {
                 <Button onClick={this.openModal}>Sign up today</Button>
               </Container>
             </SpaceContainer>
-          </Block>
-        </Container>
+          </Container>
+        </Block>
         <Container padding-bottom-xl>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>

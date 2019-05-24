@@ -10,7 +10,9 @@ const baseCss = css`
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: ${spacing.lg};`
+  margin-bottom: ${spacing.lg};
+  position: relative;
+`
 
 const baseAfterCss = css`
   background-position: center center;
@@ -25,7 +27,7 @@ const WaveContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
   justify-content: flex-start;
-  min-height: 112rem;
+  min-height: 115rem;
 
   ${above.sm`
     min-height: 142rem;
@@ -44,7 +46,7 @@ const WaveContainer = styled.section`
     /* stylelint-disable */
     ${baseAfterCss}
     background-image: url(${Wave});
-    height: 112rem;
+    height: 115rem;
 
 
     ${above.sm`
@@ -65,7 +67,7 @@ const WaveContainer = styled.section`
 const SweepContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
-  min-height: 140rem;
+  min-height: 130rem;
 
   ${above.sm`
     margin-bottom: ${spacing.xxxxl};
@@ -80,9 +82,15 @@ const SweepContainer = styled.section`
     ${baseAfterCss}
     background-image: url(${Sweep});
     height: 140rem;
+    top: -10rem;
 
     ${above.sm`
+      top: -7rem;
       height: 83rem;
+    `}
+
+    ${above.md`
+      top: -2rem;
     `}
   }
     /* stylelint-enable */
