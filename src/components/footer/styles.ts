@@ -24,6 +24,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: ${spacing.md};
 
   ${above.sm`
     justify-content: flex-start;
