@@ -3,6 +3,7 @@ import { above, colours, marginsPadding, spacing, typography, visuallyHidden } f
 
 const Container = styled.div`
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
