@@ -1,7 +1,6 @@
 import { graphql, StaticQuery } from 'gatsby'
 import React from 'react'
 import { Normalize } from 'styled-normalize'
-import Header from '../components/header'
 import { GlobalStyle } from '../styles/global'
 import { Container } from './styles'
 

@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: `Trueme`,
-    description: `Test`,
-    author: `@trueme`,
+    description: `Trueme is the #1 relationship platform for time poor single parents to connect & find love. Create something new, only with real people who understand your personal circumstance.`,
+    author: `@truemeapp`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

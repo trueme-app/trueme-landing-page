@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import Helmet from 'react-helmet'
+import OGImage from '../../assets/images/og-image.jpg'
 
 interface SEOProps {
   lang?: string,
@@ -33,7 +34,7 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, keywords, title }) 
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`${site.siteMetadata.title} | %s`}
       meta={[
         {
           name: `description`,
@@ -52,12 +53,12 @@ const SEO: React.SFC<SEOProps> = ({ description, lang, meta, keywords, title }) 
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:image`,
+          content: OGImage,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: `twitter:card`,
+          content: `summary`,
         },
         {
           name: `twitter:title`,

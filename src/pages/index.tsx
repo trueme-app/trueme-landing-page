@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title='Home'/>
+        <SEO title='For single-parents to connect & find love'/>
         <Modal>
           <RegisterForm/>
         </Modal>
