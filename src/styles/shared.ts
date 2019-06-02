@@ -10,7 +10,10 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: 1300px;
   width: 100%;
+
+  /* stylelint-disable */
   ${(props) => marginsPadding(props)};
+  /* stylelint-enable */
 `
 
 const Copy = styled.p`
