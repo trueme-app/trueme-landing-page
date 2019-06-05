@@ -5,7 +5,6 @@ import Wave from '../../assets/images/illu-wave.svg'
 import { above, spacing } from '../../styles'
 
 const baseCss = css`
-  align-items: center;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -26,7 +25,7 @@ const baseAfterCss = css`
 const WaveContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
-  justify-content: flex-start;
+  align-items: flex-end;
   min-height: 115rem;
 
   ${above.sm`
@@ -67,6 +66,7 @@ const WaveContainer = styled.section`
 const SweepContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
+  align-items: center;
   min-height: 130rem;
 
   ${above.sm`
@@ -100,6 +100,7 @@ const SweepContainer = styled.section`
 const FooterContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
+  align-items: center;
   min-height: 40rem;
   position: relative;
   top: -2rem;

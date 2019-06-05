@@ -51,7 +51,7 @@ class IndexPage extends React.Component {
           </HeaderButtonContainer>
         </Header>
         <Block type='wave'>
-          <Container>
+          <Container padding-bottom-xl>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
                 <Heading level={1}>We know it’s tough to meet someone new as a single-parent. Luckily, we’ve changed that.</Heading>
@@ -98,7 +98,7 @@ class IndexPage extends React.Component {
             </SpaceContainer>
           </Container>
         </Block>
-        <Container padding-bottom-xl>
+        <Container padding-top-lg padding-bottom-xl>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 12 }}>
               <Container padding-bottom-lg>
@@ -233,7 +233,7 @@ class IndexPage extends React.Component {
               <Grid>
                 <Grid.Column xs={{ start: 2, end: 12 }} sm={{ start: 1, end: 13 }} md={{ start: 3, end: 11 }}>
                   <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
-                  <Copy colour='grey' variant='light'>Exclusive to the first 100 members.</Copy>
+                  <Copy colour='grey' variant='light'>Exclusive to the first 1000 members.</Copy>
                   <ButtonContainer margin-top-xl>
                     <Button onClick={this.openModal}>Sign Up Today</Button>
                   </ButtonContainer>
