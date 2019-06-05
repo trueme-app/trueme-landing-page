@@ -25,7 +25,7 @@ const baseAfterCss = css`
 const WaveContainer = styled.section`
   /* stylelint-disable */
   ${baseCss}
-  align-items: flex-end;
+  justify-content: center;
   min-height: 115rem;
 
   ${above.sm`

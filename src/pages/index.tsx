@@ -51,17 +51,19 @@ class IndexPage extends React.Component {
           </HeaderButtonContainer>
         </Header>
         <Block type='wave'>
-          <Container padding-bottom-xl>
-            <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
-                <Heading level={1}>We know it’s tough to meet someone new as a single-parent. Luckily, we’ve changed that.</Heading>
-              </Grid.Column>
-            </Grid>
-            <Grid>
-              <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 4, end: 10 }}>
-                <Heading level={4}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
-              </Grid.Column>
-            </Grid>
+          <Container padding-bottom-xl stretch>
+            <Container>
+              <Grid>
+                <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 3, end: 11 }}>
+                  <Heading level={1}>We know it’s tough to meet someone new as a single-parent. Luckily, we’ve changed that.</Heading>
+                </Grid.Column>
+              </Grid>
+              <Grid>
+                <Grid.Column xs={{ start: 2, end: 12 }} md={{ start: 4, end: 10 }}>
+                  <Heading level={4}>A mature way to discover, connect & meet people who understand your unique situation.</Heading>
+                </Grid.Column>
+              </Grid>
+            </Container>
             <Container padding-top-md>
               <Button hideMd={true} onClick={this.openModal}>Sign up today</Button>
             </Container>

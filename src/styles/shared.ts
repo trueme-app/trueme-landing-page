@@ -13,6 +13,7 @@ const Container = styled.div`
 
   /* stylelint-disable */
   ${(props) => marginsPadding(props)};
+  ${(props) => props.stretch ? `flex: 1` : ``};
   /* stylelint-enable */
 `
 
