@@ -39,6 +39,10 @@ const WaveContainer = styled.section`
   ${above.xl`
     min-height: 126rem;
   `}
+
+  ${above.xxl`
+    min-height: 105vw;
+  `}
   /* stylelint-enable */
 
   &::after {
@@ -59,6 +63,10 @@ const WaveContainer = styled.section`
     ${above.xl`
       min-height: 126rem;
     `}
+
+    ${above.xxl`
+      min-height: 105vw;
+    `}
     /* stylelint-enable */
   }
 `
@@ -78,6 +86,10 @@ const SweepContainer = styled.section`
     min-height: 83rem;
   `}
 
+  ${above.xl`
+    min-height: 80vw;
+  `}
+
   &::after {
     ${baseAfterCss}
     background-image: url(${Sweep});
@@ -91,6 +103,10 @@ const SweepContainer = styled.section`
 
     ${above.md`
       top: -2rem;
+    `}
+
+    ${above.xl`
+      height: 80vw;
     `}
   }
     /* stylelint-enable */
@@ -113,6 +129,10 @@ const FooterContainer = styled.section`
     min-height: 63rem;
   `}
 
+  ${above.xl`
+    min-height: 55vw;
+  `}
+
   &::after {
     ${baseAfterCss}
     background-image: url(${Footer});
@@ -124,6 +144,10 @@ const FooterContainer = styled.section`
 
     ${above.lg`
       height: 63rem;
+    `}
+
+    ${above.xl`
+      height: 55vw;
     `}
   }
   /* stylelint-enable */
