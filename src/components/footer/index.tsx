@@ -4,8 +4,8 @@ import ArrowIcon from '../../assets/images/icon-arrow.inline.svg'
 import FacebookIcon from '../../assets/images/icon-facebook.inline.svg'
 import InstagramIcon from '../../assets/images/icon-instagram.inline.svg'
 import Dancing from '../../assets/images/illu-dancing-2.inline.svg'
-import { EMAIL_REGEX, REGISTRATION_URL } from '../../constants'
-import DatabaseService from '../../services/database'
+import { EMAIL_REGEX } from '../../constants'
+import { setRegistration } from '../../services/klaviyo'
 import { colours } from '../../styles'
 import { Container, Copy, ErrorMessage, HiddenLabel } from '../../styles/shared'
 import Grid from '../grid'
@@ -45,12 +45,7 @@ class Footer extends React.Component {
     })
 
     try {
-      const result = await DatabaseService.setRegistration(this.state.email)
-      const win = window.open(REGISTRATION_URL)
-
-      if (!win) {
-        window.location = REGISTRATION_URL
-      }
+      const result = await setRegistration(this.state.email)
 
       this.setState({
         email: '',

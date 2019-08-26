@@ -1,4 +1,3 @@
-import { graphql } from 'gatsby'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import AdviceIcon from '../assets/images/icon-advice.inline.svg'
@@ -18,7 +17,6 @@ import Grid from '../components/grid'
 import Header from '../components/header'
 import { ButtonContainer as HeaderButtonContainer } from '../components/header/styles'
 import Heading from '../components/heading'
-import Hero from '../components/hero'
 import Modal from '../components/modal'
 import ProductBenefit from '../components/product-benefit'
 import RegisterForm from '../components/register-form'
@@ -29,10 +27,6 @@ import Layout from '../layouts'
 import { Container, Copy, SpaceContainer, SVGContainer } from '../styles/shared'
 
 class IndexPage extends React.Component {
-  constructor() {
-    super()
-  }
-
   openModal = () => {
     const { toggleModal } = this.props
     toggleModal(true)
@@ -47,7 +41,7 @@ class IndexPage extends React.Component {
         </Modal>
         <Header>
           <HeaderButtonContainer>
-            <Button onClick={this.openModal}>Sign up today</Button>
+            <Button onClick={this.openModal}>Sign up to our private beta</Button>
           </HeaderButtonContainer>
         </Header>
         <Block type='wave'>
@@ -65,7 +59,7 @@ class IndexPage extends React.Component {
               </Grid>
             </Container>
             <Container padding-top-md>
-              <Button hideMd={true} onClick={this.openModal}>Sign up today</Button>
+              <Button hideMd={true} onClick={this.openModal}>Sign up to our private beta</Button>
             </Container>
             <Grid>
               <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
@@ -95,7 +89,7 @@ class IndexPage extends React.Component {
                 </Grid>
               </Container>
               <Container padding-bottom-xxl>
-                <Button onClick={this.openModal}>Sign up today</Button>
+                <Button onClick={this.openModal}>Sign up to our private beta</Button>
               </Container>
             </SpaceContainer>
           </Container>
@@ -147,7 +141,7 @@ class IndexPage extends React.Component {
         </Container>
         <Container padding-top-lg>
           <ButtonContainer padding-top-lg>
-            <Button onClick={this.openModal}>Sign Up Today</Button>
+            <Button onClick={this.openModal}>Sign up to our private beta</Button>
           </ButtonContainer>
         </Container>
         <Block type='sweep'>
@@ -183,7 +177,7 @@ class IndexPage extends React.Component {
                   </Container>
                 </Grid.Column>
               </Grid>
-              <Button onClick={this.openModal}>Sign Up Today</Button>
+              <Button onClick={this.openModal}>Sign up to our private beta</Button>
             </Container>
           </SpaceContainer>
         </Block>
@@ -227,7 +221,7 @@ class IndexPage extends React.Component {
               <Copy>Help schedule dates based on your availability</Copy>
             </ProductBenefit.Item>
           </ProductBenefit>
-          <Button onClick={this.openModal}>Sign Up Today</Button>
+          <Button onClick={this.openModal}>Sign up to our private beta</Button>
         </Container>
         <Block type='footer'>
           <SpaceContainer>
@@ -237,7 +231,7 @@ class IndexPage extends React.Component {
                   <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
                   <Copy colour='grey' variant='light'>Exclusive to the first 1000 members.</Copy>
                   <ButtonContainer margin-top-xl>
-                    <Button onClick={this.openModal}>Sign Up Today</Button>
+                    <Button onClick={this.openModal}>Sign up to our private beta</Button>
                   </ButtonContainer>
                 </Grid.Column>
               </Grid>

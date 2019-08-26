@@ -78,6 +78,10 @@ const ErrorMessage = styled(Copy)`
   `}
 `
 
+const SuccessMessage = styled(ErrorMessage)`
+  color: ${colours.green.base};
+`
+
 const HiddenLabel = styled.label`
   ${visuallyHidden()}
 `
@@ -86,6 +90,7 @@ export {
   Container,
   Copy,
   ErrorMessage,
+  SuccessMessage,
   SpaceContainer,
   SVGContainer,
   UnstyledList,
