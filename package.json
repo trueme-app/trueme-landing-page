@@ -2,7 +2,7 @@
   "name": "trueme",
   "private": true,
   "description": "Trueme Website",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "David Johnson <developers@trueme.app>",
   "dependencies": {
     "@aws-amplify/api": "^1.0.42",
