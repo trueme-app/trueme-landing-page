@@ -16,6 +16,4 @@ PROVIDERS="{\
 \"awscloudformation\":${AWSCONFIG}\
 }"
 
-echo "./node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes"
-cd node_modules/@trueme/aws-amplify
-./node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
+./node_modules/@trueme/aws-amplify/node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
