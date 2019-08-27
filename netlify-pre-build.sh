@@ -27,5 +27,6 @@ EOL
 cat > ~/.aws/config << EOL
 [netlify]
 region=$TRUEME_AWS_REGION
+EOL
 
 ./node_modules/@trueme/aws-amplify/node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
