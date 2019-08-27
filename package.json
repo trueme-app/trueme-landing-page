@@ -5,12 +5,12 @@
   "version": "0.1.0",
   "author": "David Johnson <developers@trueme.app>",
   "dependencies": {
+    "@aws-amplify/api": "^1.0.42",
     "@trueme/aws-amplify": "^0.1.13",
     "@types/node": "^12.0.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
     "axios": "^0.19.0",
-    "firebase": "^6.0.2",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-favicon": "^3.1.6",

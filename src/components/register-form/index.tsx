@@ -2,13 +2,27 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { EMAIL_REGEX } from '../../constants'
 import { setRegistration } from '../../services/klaviyo'
-import { Container, Copy, ErrorMessage, SuccessMessage, HiddenLabel } from '../../styles/shared'
+import { Container, Copy, ErrorMessage, HiddenLabel, SuccessMessage } from '../../styles/shared'
 import Button from '../button'
 import Heading from '../heading'
 import { Form, Input, RegisterFormContainer } from './styles'
 
-class RegisterForm extends React.Component {
-  constructor(props) {
+interface Props {
+  toggleModal: (isOpen: boolean) => void
+  isOpen: boolean
+}
+
+interface State {
+  loading: boolean
+  isEmailValid: boolean
+  email: string
+  hasError: boolean
+  hasSuccess: boolean
+  errorMessage: string | null
+}
+
+class RegisterForm extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = {
       loading: false,
@@ -20,7 +34,7 @@ class RegisterForm extends React.Component {
     }
   }
 
-  submitForm = async (e) => {
+  submitForm = async (e: React.FormEvent) => {
     e.preventDefault()
 
     this.setState({
@@ -34,8 +48,6 @@ class RegisterForm extends React.Component {
       const result = await setRegistration(this.state.email)
       const { toggleModal } = this.props
 
-      toggleModal(false)
-
       this.setState({
         email: '',
         isEmailValid: false,
@@ -45,6 +57,7 @@ class RegisterForm extends React.Component {
       console.log(ex)
       this.setState({
         hasError: true,
+        hasSuccess: false,
         errorMessage: 'Registration failed. Please wait and try again in a few minutes.'
       })
     } finally {
@@ -52,7 +65,7 @@ class RegisterForm extends React.Component {
     }
   }
 
-  onChange = (e) => {
+  onChange = (e: any) => {
     const email = e.target.value
     const isEmailValid = e.target.value.match(EMAIL_REGEX)
     this.setState({ email, isEmailValid, hasError: false, hasSuccess: false })
@@ -101,7 +114,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleModal: (isOpen) =>
+    toggleModal: (isOpen: boolean) =>
       dispatch({
         type: 'TOGGLE_MODAL',
         value: isOpen
