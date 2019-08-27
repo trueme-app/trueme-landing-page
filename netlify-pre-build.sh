@@ -19,9 +19,13 @@ PROVIDERS="{\
 mkdir ~/.aws
 cat > ~/.aws/credentials << EOL
 [netlify]
-region = $TRUEME_AWS_REGION
-aws_secret_access_key = $TRUEME_AWS_SECRET_ACCESS_KEY
-aws_access_key_id = $TRUEME_AWS_ACCESS_KEY_ID
+region=$TRUEME_AWS_REGION
+aws_secret_access_key=$TRUEME_AWS_SECRET_ACCESS_KEY
+aws_access_key_id=$TRUEME_AWS_ACCESS_KEY_ID
 EOL
+
+cat > ~/.aws/config << EOL
+[netlify]
+region=$TRUEME_AWS_REGION
 
 ./node_modules/@trueme/aws-amplify/node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
