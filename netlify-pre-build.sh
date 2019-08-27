@@ -16,6 +16,7 @@ PROVIDERS="{\
 \"awscloudformation\":${AWSCONFIG}\
 }"
 
+mkdir ~/.aws
 cat > ~/.aws/credentials << EOL
 [netlify]
 region = $TRUEME_AWS_REGION
