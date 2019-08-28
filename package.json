@@ -2,13 +2,15 @@
   "name": "trueme",
   "private": true,
   "description": "Trueme Website",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "David Johnson <developers@trueme.app>",
   "dependencies": {
+    "@aws-amplify/api": "^1.0.42",
+    "@trueme/aws-amplify": "^0.1.13",
     "@types/node": "^12.0.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
-    "firebase": "^6.0.2",
+    "axios": "^0.19.0",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-favicon": "^3.1.6",
@@ -30,7 +32,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.0.3",
-    "react-spinners": "^0.5.4",
+    "react-spinners": "^0.6.1",
     "redux": "^4.0.1",
     "styled-components": "^4.2.0",
     "styled-normalize": "^8.0.6"
@@ -58,7 +60,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project . && stylelint './src/**/*.ts'"
+    "lint": "tslint --project . && stylelint './src/**/*.ts'",
+    "amplify:init": "cd node_modules/@trueme/aws-amplify && node node_modules/.bin/amplify init"
   },
   "repository": {
     "type": "git",
