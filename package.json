@@ -6,6 +6,7 @@
   "author": "David Johnson <developers@trueme.app>",
   "dependencies": {
     "@aws-amplify/api": "^3.1.22",
+    "@aws-amplify/cli": "^4.24.0",
     "@trueme/aws-amplify": "^1.0.3",
     "@types/node": "^14.0.27",
     "@types/react": "^16.9.5",
