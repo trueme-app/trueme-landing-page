@@ -30,4 +30,4 @@ region=$TRUEME_AWS_REGION
 EOL
 
 cd ./node_modules/@trueme/aws-amplify
-./node_modules/.bin/amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
+amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
