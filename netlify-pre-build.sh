@@ -32,4 +32,5 @@ EOL
 npm i -g @aws-amplify/cli@4.24.0
 
 cd ./node_modules/@trueme/aws-amplify
+yarn build
 amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
