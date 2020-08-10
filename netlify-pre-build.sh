@@ -30,9 +30,5 @@ region=$TRUEME_AWS_REGION
 EOL
 
 npm i -g @aws-amplify/cli@4.24.0
-cd ./node_modules/@trueme/aws-amplify
-yarn build
-npm bin
-echo $CWD
-which amplify
 amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
+cp ./aws-exports.js ./node_modules/@trueme/aws-amplify
