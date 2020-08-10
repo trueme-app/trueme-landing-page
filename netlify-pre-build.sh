@@ -32,3 +32,5 @@ EOL
 npm i -g @aws-amplify/cli@4.24.0
 amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
 cp ./aws-exports.js ./node_modules/@trueme/aws-amplify
+
+echo $PWD
