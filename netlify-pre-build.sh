@@ -2,10 +2,8 @@
 
 AWSCONFIG="{\
 \"configLevel\":\"project\",\
-\"useProfile\":false,\
-\"accessKeyId\":\"${TRUEME_AWS_ACCESS_KEY_ID}\",\
-\"secretAccessKey\":\"${TRUEME_AWS_SECRET_ACCESS_KEY}\",\
-\"region\":\"${TRUEME_AWS_REGION}\"\
+\"useProfile\":true,\
+\"profileName\":\"netlify\",\
 }"
 
 AMPLIFY="{\
@@ -29,7 +27,6 @@ cat > ~/.aws/config << EOL
 region=$TRUEME_AWS_REGION
 EOL
 
-npm i -g @aws-amplify/cli@4.24.0
 amplify init --amplify ${AMPLIFY} --providers ${PROVIDERS} --yes
 cp ./aws-exports.js ./node_modules/@trueme/aws-amplify
 
