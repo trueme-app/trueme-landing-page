@@ -1,4 +1,4 @@
-const grid = {
+export const grid = {
   xs: {
     start: 1,
     end: 13,
@@ -11,13 +11,8 @@ const grid = {
   xxl: {},
 }
 
-interface IGridConfig {
+export interface IGridConfig {
   start: number,
   end: number,
   columns?: number,
-}
-
-export {
-  grid,
-  IGridConfig,
 }

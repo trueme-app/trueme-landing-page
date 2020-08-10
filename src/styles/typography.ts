@@ -1,4 +1,4 @@
-const typeSizes = {
+export const typeSizes = {
   h1: {
     xs: '1.78rem',
     sm: '2.5rem',
@@ -21,12 +21,13 @@ const typeSizes = {
   },
 }
 
-const fonts = {
+export const fonts = {
   body: 'Benton Sans',
+  bodyBold: 'Benton Sans Medium',
   heading: 'Butler Medium',
 }
 
-const typography = {
+export const typography = {
   h1: {
     font: fonts.heading,
     size: typeSizes.h1,
@@ -46,7 +47,7 @@ const typography = {
     lineHeight: 1.25,
   },
   h4: {
-    font: fonts.body,
+    font: fonts.bodyBold,
     size: typeSizes.h4,
     letterSpacing: 0,
     lineHeight: 1.25,
@@ -57,10 +58,4 @@ const typography = {
     letterSpacing: 0,
     lineHeight: 1.74,
   }
-}
-
-export {
-  fonts,
-  typography,
-  typeSizes,
 }
