@@ -7,11 +7,14 @@ interface IButton {
   label?: string
   children?: React.ReactNode,
   htmlType?: 'button' | 'a',
+  onClick: () => void
+  loading?: boolean
 }
 
 class Button extends React.Component<IButton> {
   static defaultProps = {
     htmlType: 'button',
+    loading: false,
   }
 
   onClick = () => {

@@ -1,18 +1,18 @@
-import * as React from 'react'
-import { grid, IGrid } from '../../styles'
+import React, { ReactElement } from 'react'
+import { grid, IGridConfig } from '../../styles'
 import { GridColumnContainer, GridContainer } from './styles'
 
 interface IGrid {
-  children: React.ReactNode[],
+  children: ReactElement,
   justify: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly',
   align: 'start' | 'end' | 'center' | 'stretch' | 'space-around' | 'space-between' | 'space-evenly',
   textAlign: 'left' | 'right' | 'center',
-  xs?: IGrid,
-  sm?: IGrid,
-  md?: IGrid,
-  lg?: IGrid,
-  xl?: IGrid,
-  xxl?: IGrid,
+  xs?: IGridConfig,
+  sm?: IGridConfig,
+  md?: IGridConfig,
+  lg?: IGridConfig,
+  xl?: IGridConfig,
+  xxl?: IGridConfig,
 }
 
 interface IGridColumn {
@@ -23,12 +23,12 @@ interface IGridColumn {
   orderLg?: number,
   orderXl?: number,
   orderXxl?: number,
-  xs?: IGrid,
-  sm?: IGrid,
-  md?: IGrid,
-  lg?: IGrid,
-  xl?: IGrid,
-  xxl?: IGrid,
+  xs?: IGridConfig,
+  sm?: IGridConfig,
+  md?: IGridConfig,
+  lg?: IGridConfig,
+  xl?: IGridConfig,
+  xxl?: IGridConfig,
 }
 
 class Grid extends React.Component<IGrid> {

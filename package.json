@@ -32,11 +32,12 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-helmet": "5.2.1",
-    "react-redux": "^7.1.1",
+    "react-redux": "^7.2.1",
     "react-spinners": "^0.9.0",
     "redux": "^4.0.4",
     "styled-components": "4.4.0",
-    "styled-normalize": "^8.0.6"
+    "styled-normalize": "^8.0.6",
+    "typescript-fsa": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^2.0.5",
@@ -60,15 +61,17 @@
     "format": "prettier --write src/**/*.{ts,tsx}",
     "start": "yarn run develop",
     "serve": "gatsby serve",
+    "netlify:build": "netlify build && netlify deploy",
+    "netlify:build:preview": "netlify build --context deploy-preview && netlify deploy",
+    "netlify:deploy": "netlify deploy",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project . && stylelint './src/**/*.ts'",
-    "amplify:init": "cd node_modules/@trueme/aws-amplify && node node_modules/.bin/amplify init"
+    "lint": "tslint --project . && stylelint './src/**/*.ts'"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/struct78/trueme"
+    "url": "https://github.com/trueme-app/trueme-landing-page"
   },
   "bugs": {
-    "url": "https://github.com/struct78/trueme/issues"
+    "url": "https://github.com/trueme-app/trueme-landing-page/issues"
   }
 }

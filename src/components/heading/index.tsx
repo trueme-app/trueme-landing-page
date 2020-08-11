@@ -5,9 +5,9 @@ import { HeadingContainer } from './styles'
 interface IHeading {
   children: React.ReactNode,
   level: 1 | 2 | 3 | 4,
-  colour: 'grey' | 'green',
-  variant: 'dark' | 'light',
-  as: 1 | 2 | 3 | 4,
+  colour?: 'grey' | 'green',
+  variant?: 'dark' | 'light',
+  as?: 1 | 2 | 3 | 4,
 }
 
 class Heading extends React.Component<IHeading> {

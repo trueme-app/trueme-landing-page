@@ -1,128 +1,101 @@
-import * as React from 'react'
-import { connect } from 'react-redux'
+import React, { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { EMAIL_REGEX } from '../../constants'
 import { setRegistration } from '../../services/klaviyo'
 import { Container, Copy, ErrorMessage, HiddenLabel, SuccessMessage } from '../../styles/shared'
 import Button from '../button'
 import Heading from '../heading'
 import { Form, Input, RegisterFormContainer } from './styles'
+import { State } from '../../state'
 
-interface Props {
-  toggleModal: (isOpen: boolean) => void
-  isOpen: boolean
-}
-
-interface State {
+interface RegisterState {
   loading: boolean
   isEmailValid: boolean
   email: string
   hasError: boolean
   hasSuccess: boolean
-  errorMessage: string | null
+  errorMessage?: string
 }
 
-class RegisterForm extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      loading: false,
-      isEmailValid: false,
-      email: '',
-      hasError: false,
-      hasSuccess: false,
-      errorMessage: null,
-    }
-  }
+const RegisterForm: FC = (props) => {
+  const dispatch = useDispatch()
+  const emailRef = useRef()
+  const isOpen = useSelector((globalState: State) => globalState.modal.isOpen)
+  const [state, setState] = useState<RegisterState>({
+    loading: false,
+    isEmailValid: false,
+    email: '',
+    hasError: false,
+    hasSuccess: false,
+  })
 
-  submitForm = async (e: React.FormEvent) => {
+  const submitForm = async (e: FormEvent) => {
     e.preventDefault()
 
-    this.setState({
+    setState((prevState) => ({
+      ...prevState,
       loading: true,
       hasError: false,
       hasSuccess: false,
       errorMessage: null,
-    })
+    }))
 
     try {
-      const result = await setRegistration(this.state.email)
-      const { toggleModal } = this.props
+      const result = await setRegistration(state.email)
 
-      this.setState({
+      setState((prevState) => ({
+        ...prevState,
         email: '',
         isEmailValid: false,
         hasSuccess: true,
-      })
+      }))
     } catch(ex) {
-      console.log(ex)
-      this.setState({
+      setState((prevState) => ({
+        ...prevState,
         hasError: true,
         hasSuccess: false,
         errorMessage: 'Registration failed. Please wait and try again in a few minutes.'
-      })
+      }))
     } finally {
-      this.setState({ loading: false })
+      setState((prevState) => ({ ...prevState, loading: false }))
     }
   }
 
-  onChange = (e: any) => {
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value
-    const isEmailValid = e.target.value.match(EMAIL_REGEX)
-    this.setState({ email, isEmailValid, hasError: false, hasSuccess: false })
+    const isEmailValid = !!e.target.value.match(EMAIL_REGEX)
+    setState((prevState) => ({ ...prevState, email, isEmailValid, hasError: false, hasSuccess: false }))
   }
 
-  componentDidUpdate() {
-    const { isOpen } = this.props
-
+  useEffect(() => {
     if (isOpen) {
-      this.emailInput.focus()
+      emailRef.current.focus()
     }
-  }
+  }, [isOpen])
 
-  render() {
-    return (
-      <RegisterFormContainer>
-        <Heading level={2}>Register for our private beta.</Heading>
-        <Copy half>You’ll be the first to use the app.</Copy>
-        <Form hasError={this.state.hasError} onSubmit={this.submitForm}>
-          <HiddenLabel htmlFor='email-modal'>Enter your email address</HiddenLabel>
-          <Input id='email-modal' hasError={this.state.hasError} ref={(input) => { this.emailInput = input }} type='email' onChange={this.onChange} value={this.state.email} placeholder='Enter email address' required/>
-          <Button type='submit' padding-top-lg padding-bottom-lg disabled={!this.state.isEmailValid} loading={this.state.loading}>
-            Submit
-          </Button>
-        </Form>
-        {this.state.hasError && (
-          <Container>
-            <ErrorMessage>{this.state.errorMessage}</ErrorMessage>
-          </Container>
-        )}
-        {this.state.hasSuccess && (
-          <Container>
-            <SuccessMessage>Thank you. You’ve been added to the private beta. Please check your inbox.</SuccessMessage>
-          </Container>
-        )}
-      </RegisterFormContainer>
-    )
-  }
+  return (
+    <RegisterFormContainer>
+      <Heading level={2}>Register for our private beta.</Heading>
+      <Copy half>You’ll be the first to use the app.</Copy>
+      <Form hasError={state.hasError} onSubmit={submitForm}>
+        <HiddenLabel htmlFor='email-modal'>Enter your email address</HiddenLabel>
+        <Input id='email-modal' hasError={state.hasError} ref={emailRef} type='email' onChange={onChange} value={state.email} placeholder='Enter email address' required/>
+        <Button type='submit' padding-top-lg padding-bottom-lg disabled={!state.isEmailValid} loading={state.loading}>
+          Submit
+        </Button>
+      </Form>
+      {state.hasError && (
+        <Container>
+          <ErrorMessage>{state.errorMessage}</ErrorMessage>
+        </Container>
+      )}
+      {state.hasSuccess && (
+        <Container>
+          <SuccessMessage>Thank you. You’ve been added to the private beta. Please check your inbox.</SuccessMessage>
+        </Container>
+      )}
+    </RegisterFormContainer>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    isOpen: state.modal.isOpen,
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    toggleModal: (isOpen: boolean) =>
-      dispatch({
-        type: 'TOGGLE_MODAL',
-        value: isOpen
-      })
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RegisterForm)
+export default RegisterForm
