@@ -1,29 +1,45 @@
 import styled, { createGlobalStyle } from 'styled-components'
-import { above, colours, easing, fontFiles, fonts, spacing, timing, typography } from './index'
+import { above, ButlerBoldWoff2, ButlerBoldWoff, ButlerMediumWoff2, ButlerMediumWoff, BentonSansWoff2, BentonSansWoff, BentonSansBoldWoff2, BentonSansBoldWoff, BentonSansMediumWoff2, BentonSansMediumWoff, colours, easing, fontFiles, fonts, spacing, timing, typography } from './index'
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Butler Bold';
     font-style: normal;
     font-weight: normal;
-    src: url('${fontFiles.ButlerBoldWoff2}') format('woff2'),
-        url('${fontFiles.ButlerBoldWoff}') format('woff');
+    src: url('${ButlerBoldWoff2}') format('woff2'),
+        url('${ButlerBoldWoff}') format('woff');
   }
 
   @font-face {
     font-family: 'Butler Medium';
     font-style: normal;
     font-weight: normal;
-    src: url('${fontFiles.ButlerMediumWoff2}') format('woff2'),
-        url('${fontFiles.ButlerMediumWoff}') format('woff');
+    src: url('${ButlerMediumWoff2}') format('woff2'),
+        url('${ButlerMediumWoff}') format('woff');
   }
 
   @font-face {
     font-family: 'Benton Sans';
     font-style: normal;
     font-weight: normal;
-    src: url('${fontFiles.BentonSansWoff2}') format('woff2'),
-        url('${fontFiles.BentonSansWoff}') format('woff');
+    src: url('${BentonSansWoff2}') format('woff2'),
+        url('${BentonSansWoff}') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Benton Sans Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('${BentonSansBoldWoff2}') format('woff2'),
+        url('${BentonSansBoldWoff}') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Benton Sans Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: url('${BentonSansMediumWoff2}') format('woff2'),
+        url('${BentonSansMediumWoff}') format('woff');
   }
 
   html {
@@ -48,5 +64,10 @@ export const GlobalStyle = createGlobalStyle`
     transition: ${
       ['background-color', 'color', 'fill', 'stroke', 'box-shadow'].map((prop) => `${prop} ${timing.default} ${easing.default}${prop === 'box-shadow' ? `` : `, `}`)
     }
+  }
+
+  a {
+    color: currentColor;
+    font-family: ${fonts.bodyBold};
   }
 `

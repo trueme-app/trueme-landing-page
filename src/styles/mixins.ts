@@ -1,6 +1,6 @@
 import { rgba } from 'polished'
 import { css } from 'styled-components'
-import spacing from './spacing'
+import { spacing } from './spacing'
 
 export const media = {
   xxl: 1600,
@@ -84,4 +84,47 @@ export const visuallyHidden = () => {
     top: 0;
     width: 1px !important;
   `
+}
+
+export const alignItems = (props: any) => {
+  switch (props.align) {
+    case 'left':
+    case 'top':
+      return css`
+        align-items: flex-start;
+      `
+    case 'right':
+    case 'bottom':
+      return css`
+        align-items: flex-end;
+      `
+    case 'space-between':
+      return css`
+        align-items: space-between;
+      `
+    case 'center':
+      return css`
+        align-items: center;
+      `
+    default:
+      return css``
+  }
+}
+
+export const textAlign = (props: any) => {
+  switch (props.align) {
+    case 'right':
+      return css`
+        text-align: right;
+      `
+    case 'left':
+      return css`
+        text-align: left;
+      `
+    case 'center':
+    default:
+      return css`
+        text-align: center;
+      `
+  }
 }
