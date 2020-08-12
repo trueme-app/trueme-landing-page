@@ -1,13 +1,14 @@
 {
-  "name": "trueme",
+  "name": "trueme-website",
   "private": true,
   "description": "Trueme Website",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "David Johnson <developers@trueme.app>",
   "dependencies": {
-    "@aws-amplify/api": "^1.1.3",
-    "@trueme/aws-amplify": "^0.1.21",
-    "@types/node": "^12.7.11",
+    "@aws-amplify/api": "^3.1.22",
+    "@aws-amplify/cli": "^4.24.0",
+    "@trueme/aws-amplify": "^1.0.3",
+    "@types/node": "^14.0.27",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
     "axios": "^0.19.0",
@@ -18,7 +19,7 @@
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-react-helmet": "^3.1.10",
-    "gatsby-plugin-react-svg": "^2.1.2",
+    "gatsby-plugin-react-svg": "2.1.2",
     "gatsby-plugin-sharp": "2.2.14",
     "gatsby-plugin-styled-components": "^3.1.8",
     "gatsby-plugin-tslint": "^0.0.2",
@@ -30,23 +31,24 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1",
-    "react-redux": "^7.1.1",
-    "react-spinners": "^0.6.1",
+    "react-helmet": "5.2.1",
+    "react-redux": "^7.2.1",
+    "react-spinners": "^0.9.0",
     "redux": "^4.0.4",
-    "styled-components": "^4.4.0",
-    "styled-normalize": "^8.0.6"
+    "styled-components": "4.4.0",
+    "styled-normalize": "^8.0.6",
+    "typescript-fsa": "^3.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.18.2",
-    "stylelint": "^11.0.0",
+    "prettier": "^2.0.5",
+    "stylelint": "^13.6.1",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-order": "^3.1.1",
+    "stylelint-order": "^4.1.0",
     "stylelint-processor-styled-components": "^1.8.0",
-    "tslint": "^5.20.0",
+    "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.1.0",
+    "tslint-react": "^5.0.0",
     "typescript": "^3.6.3"
   },
   "keywords": [
@@ -57,17 +59,19 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{ts,tsx}",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
+    "netlify:build": "netlify build && netlify deploy",
+    "netlify:build:preview": "netlify build --context deploy-preview && netlify deploy",
+    "netlify:deploy": "netlify deploy",
     "type-check": "tsc --noEmit",
-    "lint": "tslint --project . && stylelint './src/**/*.ts'",
-    "amplify:init": "cd node_modules/@trueme/aws-amplify && node node_modules/.bin/amplify init"
+    "lint": "tslint --project . && stylelint './src/**/*.ts'"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/struct78/trueme"
+    "url": "https://github.com/trueme-app/trueme-landing-page"
   },
   "bugs": {
-    "url": "https://github.com/struct78/trueme/issues"
+    "url": "https://github.com/trueme-app/trueme-landing-page/issues"
   }
 }

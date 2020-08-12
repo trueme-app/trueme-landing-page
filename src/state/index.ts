@@ -1,11 +1,24 @@
-import { createStore as reduxCreateStore } from 'redux'
+import { Action, createStore as reduxCreateStore } from 'redux'
+import actionCreatorFactory, { isType } from 'typescript-fsa'
 
-const reducer = (state, action) => {
-  if (action.type === `TOGGLE_MODAL`) {
+const actionCreator = actionCreatorFactory()
+
+export const toggleModal = actionCreator<boolean>('TOGGLE_MODAL')
+
+export interface State {
+  modal: ModalState
+}
+
+export interface ModalState {
+  isOpen: boolean
+}
+
+const reducer = (state: State, action: Action) => {
+  if (isType(action, toggleModal)) {
     return {
       ...state,
       modal: {
-        isOpen: action.value
+        isOpen: action.payload,
       }
     }
   }
@@ -13,7 +26,7 @@ const reducer = (state, action) => {
   return state
 }
 
-const initialState = {
+const initialState: State = {
   modal: {
     isOpen: false,
   }
