@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { above, alignItems, colours, marginsPadding, spacing, textAlign, typography, visuallyHidden } from './index'
+import { above, alignItems, borderRadius, colours, hidden, marginsPadding, spacing, textAlign, typography, visuallyHidden } from './'
 
 export const Container = styled.div`
   align-items: center;
@@ -37,6 +37,8 @@ export const Copy = styled.p`
       font-size: ${typography.body.size[size]};
     `)
   }
+
+  ${(props) => hidden(props)}
 `
 
 export const UnstyledList = styled.ul`
@@ -97,4 +99,32 @@ text-align: left;
 export const ListItem = styled.li`
   text-align: left;
   padding-left: ${spacing.md};
+`
+
+export const TextInput = styled.input`
+  border: 1px solid ${(props) => props.hasError ? colours.rose.base : colours.grey.mid};
+  border-radius: ${borderRadius.md};
+  box-sizing: border-box;
+  margin-bottom: ${spacing.lg};
+  padding: ${spacing.lg};
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 2px 4px -4px ${colours.green.dark};
+    outline: none;
+  }
+`
+
+export const TextArea = styled.textarea`
+  border: 1px solid ${(props) => props.hasError ? colours.rose.base : colours.grey.mid};
+  border-radius: ${borderRadius.md};
+  box-sizing: border-box;
+  margin-bottom: ${spacing.lg};
+  padding: ${spacing.lg};
+  width: 100%;
+
+  &:focus {
+    box-shadow: 0 2px 4px -4px ${colours.green.dark};
+    outline: none;
+  }
 `

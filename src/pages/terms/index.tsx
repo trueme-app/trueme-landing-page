@@ -22,7 +22,7 @@ const TermsPage: FC = () => {
 
   return (
     <Layout>
-      <SEO title='For single-parents to connect & find love'/>
+      <SEO title='Terms and Conditions'/>
       <Modal>
         <RegisterForm/>
       </Modal>

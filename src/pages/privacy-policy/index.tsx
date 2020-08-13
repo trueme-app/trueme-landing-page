@@ -22,7 +22,7 @@ const PrivacyPage: FC = () => {
 
   return (
     <Layout>
-      <SEO title='For single-parents to connect & find love'/>
+      <SEO title='Privacy Policy'/>
       <Modal>
         <RegisterForm/>
       </Modal>

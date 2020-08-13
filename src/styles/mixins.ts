@@ -128,3 +128,12 @@ export const textAlign = (props: any) => {
       `
   }
 }
+
+export const hidden = (props: any) => {
+  if (props.hidden) {
+    return css`
+      display: none
+    `
+  }
+  return css``
+}

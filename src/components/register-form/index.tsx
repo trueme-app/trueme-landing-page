@@ -1,12 +1,12 @@
 import React, { ChangeEvent, FC, FormEvent, useEffect, useRef, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { EMAIL_REGEX } from '../../constants'
 import { setRegistration } from '../../services/klaviyo'
+import { State } from '../../state'
 import { Container, Copy, ErrorMessage, HiddenLabel, SuccessMessage } from '../../styles/shared'
 import Button from '../button'
 import Heading from '../heading'
 import { Form, Input, RegisterFormContainer } from './styles'
-import { State } from '../../state'
 
 interface RegisterState {
   loading: boolean
@@ -18,7 +18,6 @@ interface RegisterState {
 }
 
 const RegisterForm: FC = (props) => {
-  const dispatch = useDispatch()
   const emailRef = useRef()
   const isOpen = useSelector((globalState: State) => globalState.modal.isOpen)
   const [state, setState] = useState<RegisterState>({
