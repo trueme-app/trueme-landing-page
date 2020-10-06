@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import AdviceIcon from '../assets/images/icon-advice.inline.svg'
 import DateIcon from '../assets/images/icon-dates.inline.svg'
 import FiltersIcon from '../assets/images/icon-filters.inline.svg'
@@ -24,15 +23,10 @@ import SEO from '../components/seo'
 import SocialProof from '../components/social-proof'
 import ValueProp from '../components/value-prop'
 import Layout from '../layouts'
-import { toggleModal } from '../state'
 import { Container, Copy, SpaceContainer, SVGContainer } from '../styles/shared'
 
 const IndexPage: FC = () => {
-  const dispatch = useDispatch()
-
-  const openModal = () => {
-    dispatch(toggleModal(true))
-  }
+  const downloadUrl = 'https://apps.apple.com/au/app/trueme/id1525692853'
 
   return (
     <Layout>
@@ -42,7 +36,7 @@ const IndexPage: FC = () => {
       </Modal>
       <Header>
         <HeaderButtonContainer>
-          <Button onClick={openModal}>Sign up to our private beta</Button>
+          <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
         </HeaderButtonContainer>
       </Header>
       <Block type='wave'>
@@ -60,7 +54,7 @@ const IndexPage: FC = () => {
             </Grid>
           </Container>
           <Container padding-top-md>
-            <Button hideMd={true} onClick={openModal}>Sign up to our private beta</Button>
+            <Button hideMd={true}>Download the iPhone App</Button>
           </Container>
           <Grid>
             <Grid.Column xs={{ start: 2, end: 11 }} md={{ start: 4, end: 9 }}>
@@ -90,7 +84,7 @@ const IndexPage: FC = () => {
               </Grid>
             </Container>
             <Container padding-bottom-xxl>
-              <Button onClick={openModal}>Sign up to our private beta</Button>
+              <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
             </Container>
           </SpaceContainer>
         </Container>
@@ -142,7 +136,7 @@ const IndexPage: FC = () => {
       </Container>
       <Container padding-top-lg>
         <ButtonContainer padding-top-lg>
-          <Button onClick={openModal}>Sign up to our private beta</Button>
+          <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
         </ButtonContainer>
       </Container>
       <Block type='sweep'>
@@ -178,7 +172,7 @@ const IndexPage: FC = () => {
                 </Container>
               </Grid.Column>
             </Grid>
-            <Button onClick={openModal}>Sign up to our private beta</Button>
+            <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
           </Container>
         </SpaceContainer>
       </Block>
@@ -222,7 +216,7 @@ const IndexPage: FC = () => {
             <Copy>Help schedule dates based on your availability</Copy>
           </ProductBenefit.Item>
         </ProductBenefit>
-        <Button onClick={openModal}>Sign up to our private beta</Button>
+        <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
       </Container>
       <Block type='footer'>
         <SpaceContainer>
@@ -232,7 +226,7 @@ const IndexPage: FC = () => {
                 <Heading level={1} colour='grey' variant='light'>Become a foundation member & receive lifetime access for <strong className='green'>FREE</strong>.</Heading>
                 <Copy colour='grey' variant='light'>Exclusive to the first 1000 members.</Copy>
                 <ButtonContainer margin-top-xl>
-                  <Button onClick={openModal}>Sign up to our private beta</Button>
+                  <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
                 </ButtonContainer>
               </Grid.Column>
             </Grid>

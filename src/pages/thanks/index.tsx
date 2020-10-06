@@ -20,11 +20,7 @@ const encode = (data: any) => {
 }
 
 const ThanksPage: FC = () => {
-  const dispatch = useDispatch()
-
-  const openModal = () => {
-    dispatch(toggleModal(true))
-  }
+  const downloadUrl = 'https://apps.apple.com/au/app/trueme/id1525692853'
 
   return (
     <Layout>
@@ -34,7 +30,7 @@ const ThanksPage: FC = () => {
       </Modal>
       <Header>
         <HeaderButtonContainer>
-          <Button onClick={openModal}>Sign up to our private beta</Button>
+          <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
         </HeaderButtonContainer>
       </Header>
       <Container padding-bottom-xl stretch>

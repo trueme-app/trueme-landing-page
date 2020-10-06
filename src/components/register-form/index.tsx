@@ -36,7 +36,7 @@ const RegisterForm: FC = (props) => {
       loading: true,
       hasError: false,
       hasSuccess: false,
-      errorMessage: null,
+      errorMessage: undefined,
     }))
 
     try {
@@ -67,19 +67,19 @@ const RegisterForm: FC = (props) => {
   }
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && emailRef.current) {
       emailRef.current.focus()
     }
   }, [isOpen])
 
   return (
     <RegisterFormContainer>
-      <Heading level={2}>Register for our private beta.</Heading>
+      <Heading level={2}>Download the iPhone App.</Heading>
       <Copy half>You’ll be the first to use the app.</Copy>
       <Form hasError={state.hasError} onSubmit={submitForm}>
         <HiddenLabel htmlFor='email-modal'>Enter your email address</HiddenLabel>
         <Input id='email-modal' hasError={state.hasError} ref={emailRef} type='email' onChange={onChange} value={state.email} placeholder='Enter email address' required/>
-        <Button type='submit' padding-top-lg padding-bottom-lg disabled={!state.isEmailValid} loading={state.loading}>
+        <Button htmlType='submit' padding-top-lg padding-bottom-lg disabled={!state.isEmailValid} loading={state.loading}>
           Submit
         </Button>
       </Form>

@@ -21,13 +21,10 @@ const encode = (data: any) => {
 }
 
 const SupportPage: FC = () => {
+  const downloadUrl = 'https://apps.apple.com/au/app/trueme/id1525692853'
   const [state, setState] = useState({})
   const [errorState, setErrorState] = useState<string | undefined>()
   const dispatch = useDispatch()
-
-  const openModal = () => {
-    dispatch(toggleModal(true))
-  }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (!e.target) {
@@ -63,7 +60,7 @@ const SupportPage: FC = () => {
       </Modal>
       <Header>
         <HeaderButtonContainer>
-          <Button onClick={openModal}>Sign up to our private beta</Button>
+          <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
         </HeaderButtonContainer>
       </Header>
       <Container padding-bottom-xl stretch>

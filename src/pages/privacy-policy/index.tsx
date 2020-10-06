@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { useDispatch } from 'react-redux'
 import Button from '../../components/button'
 import Footer from '../../components/footer'
 import Grid from '../../components/grid'
@@ -10,15 +9,10 @@ import Modal from '../../components/modal'
 import RegisterForm from '../../components/register-form'
 import SEO from '../../components/seo'
 import Layout from '../../layouts'
-import { toggleModal } from '../../state'
 import { Container, Copy, List, ListItem, SpaceContainer, SVGContainer } from '../../styles/shared'
 
 const PrivacyPage: FC = () => {
-  const dispatch = useDispatch()
-
-  const openModal = () => {
-    dispatch(toggleModal(true))
-  }
+  const downloadUrl = 'https://apps.apple.com/au/app/trueme/id1525692853'
 
   return (
     <Layout>
@@ -28,7 +22,7 @@ const PrivacyPage: FC = () => {
       </Modal>
       <Header>
         <HeaderButtonContainer>
-          <Button onClick={openModal}>Sign up to our private beta</Button>
+          <Button href={downloadUrl} as='a' target='_blank'>Download the iPhone App</Button>
         </HeaderButtonContainer>
       </Header>
       <Container padding-bottom-xl stretch>

@@ -7,11 +7,16 @@ const StyledButton = styled.button`
   border-radius: ${borderRadius.default};
   color: ${colours.grey.base};
   display: ${(props) => props.hideXs ? 'none': 'flex'};
+  font-weight: normal;
   justify-content: center;
+  align-items: center;
+  line-height: 1;
   min-width: 12.5rem;
   padding: ${spacing.md} ${spacing.xxl};
   position: relative;
+  text-decoration: none;
   text-transform: uppercase;
+  text-rendering: auto;
 
   /* stylelint-disable */
   ${focusState(colours.rose.base, borderRadius.md)}
@@ -55,7 +60,8 @@ const ButtonContainer = styled.div`
 `
 
 const VisibilitySwitcher = styled.span`
-  visibility: ${(props) => props.visible ? 'visible':'hidden'}
+  visibility: ${(props) => props.visible ? 'visible':'hidden'};
+  padding-top: 4px;
 `
 
 const LoadingContainer = styled.span`
